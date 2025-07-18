@@ -3,19 +3,18 @@ import { ArrowRightIcon, Github, Linkedin, Mail } from "lucide-react";
 
 export function Banner() {
   return (
-    <section className="relative z-10 flex min-h-[calc(100vh-7rem)] items-center justify-center py-10 md:px-8 lg:py-24 " id="home">
+    <section className="relative z-10 flex min-h-[calc(100vh-7rem)] items-center justify-center py-10 md:px-8 lg:py-24 mt-6 md:mt-0  " id="home">
       <div className="container">
-        
         <div className="grid grid-cols-1  gap-12 md:grid-cols-2">
 
-          <div className="flex flex-col items-start text-left">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
               Frontend Developer
             </p>
-            <h1 className="mt-4 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="mt-4 text-3xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
               Anurag Vashisht
             </h1>
-            <p className="mt-6 text-lg text-gray-300 max-w-lg">
+            <p className="mt-6 text-md md:text-lg text-gray-300 w-full md:max-w-lg">
               Hello! I'm Anurag Vashisht, a passionate Frontend Developer with
               expertise in building modern and responsive web applications. I
               specialize in creating engaging user experiences using
