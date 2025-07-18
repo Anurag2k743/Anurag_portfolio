@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
-:root {
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+html,body {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+
+
+body{
+    font-family: "Space Grotesk", sans-serif;
+    overflow: hidden;
+}
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +40,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */

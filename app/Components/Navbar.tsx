@@ -1,0 +1,34 @@
+import Link from "next/link"
+import { ArrowRightIcon } from "lucide-react"
+import { MdOutlineMenuOpen } from "react-icons/md";
+
+export function Header() {
+    return (
+        <header className="sticky top-4 z-50 mx-auto flex w-[calc(100%-2rem)] max-w-8xl items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-lg">
+            <div className="text-xl font-bold text-white">
+                Anurag Vashisht
+            </div>
+            <nav className="hidden md:flex items-center space-x-8">
+                 <Link className="text-m font-semibold text-white hover:text-blue-600 transition-colors" href="#home">
+                    Home
+                </Link>
+                <Link className="text-m font-semibold text-white hover:text-blue-600 transition-colors" href="#about">
+                    About
+                </Link>
+                <Link className="text-m font-semibold text-white hover:text-blue-600 transition-colors" href="#skills">
+                    Skills
+                </Link>
+                <Link className="text-m font-semibold text-white hover:text-blue-600 transition-colors" href="#projects">
+                    Projects
+                </Link>
+            </nav>
+            <button
+                className="hidden md:flex items-center gap-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors px-3 py-1.5" >
+                Contact Me
+                <ArrowRightIcon className="h-4 w-4" />
+            </button>
+
+            <button className="md:hidden"><MdOutlineMenuOpen fontSize={20}/></button>
+        </header>
+    )
+}
