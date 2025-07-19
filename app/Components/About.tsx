@@ -33,7 +33,7 @@ export default function About() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="pr-20">
+          <div className="pr-0 lg:pr-20">
             <h3 className="text-2xl font-bold mb-6">My Journey</h3>
             <p className="text-gray-300 mb-4">
               As a frontend developer, I specialize in creating responsive and interactive web applications. My journey

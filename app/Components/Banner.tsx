@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { ArrowRightIcon, Github, Linkedin, Mail } from "lucide-react";
-
+import Animation from "./Animation";
 export function Banner() {
   return (
-    <section className="relative z-10 flex min-h-[calc(100vh-7rem)] items-center justify-center py-10 md:px-8 lg:py-24 mt-6 md:mt-0  " id="home">
-      <div className="container">
-        <div className="grid grid-cols-1  gap-12 md:grid-cols-2">
+    <section className="relative z-30 flex min-h-[calc(100vh-4rem)] items-center justify-center  md:px-8 lg:py-24 pt-30 pb-15 md:pt-0" id="home">
 
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30 h-full w-full"></div>
+      <div className="flex justify-center absolute top-0 right-0 w-full h-full -z-1">
+        <Animation />
+      </div>
+
+      <div className="container">
+        <div className="grid grid-cols-1 relative z-60">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
               Frontend Developer
@@ -22,7 +27,7 @@ export function Banner() {
             </p>
 
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <button className="flex items-center gap-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors px-6 py-3">
                 Download Resume
                 <ArrowRightIcon className="h-4 w-4" />
@@ -31,7 +36,7 @@ export function Banner() {
                 Contact Me
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
-            </div> 
+            </div>
 
             <div className="mt-8 flex space-x-4">
               <a
@@ -55,17 +60,7 @@ export function Banner() {
                 <Mail size={20} />
               </a>
             </div>
-          </div> 
-
-         <div className="flex justify-center"> 
-            {/* <Image
-              src="/banner.jpg"
-              alt="Anurag Vashisht"
-              width={500}
-              height={500}
-              className="rounded-xl shadow-lg object-cover"
-              priority/>  */}
-          </div> 
+          </div>
 
         </div>
       </div>

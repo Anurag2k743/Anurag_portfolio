@@ -11,7 +11,7 @@ export function Header() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev)
 
   return (
-    <header className="sticky top-4 z-50 mx-auto w-[calc(100%-2rem)] max-w-8xl md:px-6">
+    <header className="absolute top-4 z-50 mx-auto w-[calc(100%-1rem)] max-w-8xl md:px-6 ">
       <div className="flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-lg">
         <div className="text-xl font-bold text-white">
           Anurag Vashisht
