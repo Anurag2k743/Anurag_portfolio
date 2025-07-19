@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-// import { Button } from "@/components/ui/button" // Assuming shadcn/ui Button is available
 
 type Snippet = {
   lang: string
@@ -16,12 +15,9 @@ type Snippet = {
 export default function CodeFlowAnimation() {
   const [codeSnippets, setCodeSnippets] = useState<Snippet[]>([])
   const [nodes, setNodes] = useState<{ x: number; y: number }[]>([])
-  const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null) // State to store mouse position
-  const containerRef = useRef<HTMLDivElement>(null) // Ref for the main container to track mouse events
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  /* ------------------------------------------------------------
-   * Generate snippets & nodes once on mount
-   * ---------------------------------------------------------- */
   useEffect(() => {
     const generatedSnippets: Snippet[] = [
       {
@@ -53,22 +49,19 @@ export default function CodeFlowAnimation() {
     setNodes(generatedNodes)
   }, [])
 
-  /* ------------------------------------------------------------
-   * Mouse event listeners for interaction
-   * ---------------------------------------------------------- */
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect()
         setMousePosition({
-          x: ((event.clientX - rect.left) / rect.width) * 100, // Convert to percentage
-          y: ((event.clientY - rect.top) / rect.height) * 100, // Convert to percentage
+          x: ((event.clientX - rect.left) / rect.width) * 100,
+          y: ((event.clientY - rect.top) / rect.height) * 100,
         })
       }
     }
 
     const handleMouseLeave = () => {
-      setMousePosition(null) // Clear mouse position when cursor leaves
+      setMousePosition(null)
     }
 
     const currentContainer = containerRef.current
@@ -83,9 +76,8 @@ export default function CodeFlowAnimation() {
         currentContainer.removeEventListener("mouseleave", handleMouseLeave)
       }
     }
-  }, []) // Empty dependency array ensures this runs once on mount and cleans up on unmount
+  }, [])
 
-  /* ------------------------ animation variants ------------------------ */
   const floatingCodeBlockVariants = {
     animate: (i: number) => ({
       y: ["0%", "15%", "0%"],
@@ -101,6 +93,7 @@ export default function CodeFlowAnimation() {
       },
     }),
   }
+
   const nodePulseVariants = {
     animate: {
       scale: [1, 1.2, 1],
@@ -113,6 +106,7 @@ export default function CodeFlowAnimation() {
       },
     },
   }
+
   const connectingLineVariants = {
     animate: {
       pathLength: [0, 1],
@@ -130,10 +124,9 @@ export default function CodeFlowAnimation() {
 
   return (
     <div
-      ref={containerRef} // Attach the ref to the main container
+      ref={containerRef}
       className="relative w-full min-h-[60vh] overflow-hidden bg-gray-950 flex items-center justify-center"
     >
-      {/* floating code blocks */}
       {codeSnippets.map((snippet, i) => (
         <motion.div
           key={`code-${i}`}
@@ -155,7 +148,7 @@ export default function CodeFlowAnimation() {
           {snippet.code}
         </motion.div>
       ))}
-      {/* pulsing nodes */}
+
       {nodes.map((node, i) => (
         <motion.div
           key={`node-${i}`}
@@ -166,28 +159,27 @@ export default function CodeFlowAnimation() {
           animate="animate"
         />
       ))}
-      {/* connecting lines */}
+
       <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <defs>
           <linearGradient id="gradient-line" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#8B5CF6" />
             <stop offset="100%" stopColor="#EC4899" />
           </linearGradient>
-          {/* New gradient for lines connected to the mouse */}
           <linearGradient id="gradient-mouse-line" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00F0FF" /> {/* Bright Cyan */}
-            <stop offset="100%" stopColor="#00FF80" /> {/* Bright Green */}
+            <stop offset="0%" stopColor="#00F0FF" />
+            <stop offset="100%" stopColor="#00FF80" />
           </linearGradient>
         </defs>
 
         {nodes.length > 1 &&
-          [...Array(5)].map((_, i) => {
+          [...Array(5)].map((_, _i) => {
             const start = nodes[Math.floor(Math.random() * nodes.length)]
             const end = nodes[Math.floor(Math.random() * nodes.length)]
             if (start === end) return null
             return (
               <motion.line
-                key={`line-${i}`}
+                key={`line-${_i}`}
                 x1={`${start.x}%`}
                 y1={`${start.y}%`}
                 x2={`${end.x}%`}
@@ -202,24 +194,21 @@ export default function CodeFlowAnimation() {
             )
           })}
 
-        {/* Lines connecting existing nodes to the mouse position */}
         {mousePosition &&
-          nodes.map((node, i) => (
+          nodes.map((node, _i) => (
             <line
-              key={`mouse-line-${i}`}
+              key={`mouse-line-${_i}`}
               x1={`${node.x}%`}
               y1={`${node.y}%`}
               x2={`${mousePosition.x}%`}
               y2={`${mousePosition.y}%`}
               stroke="url(#gradient-mouse-line)"
-              strokeWidth="1.5" // Slightly thicker for emphasis
+              strokeWidth="1.5"
               strokeLinecap="round"
-              opacity={0.7} // Constant opacity when mouse is active
+              opacity={0.7}
             />
           ))}
       </svg>
-
-     
     </div>
   )
 }
