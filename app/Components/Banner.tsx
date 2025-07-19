@@ -3,7 +3,7 @@ import Animation from "./Animation";
 
 export function Banner() {
   return (
-    <section className="relative z-30 flex min-h-[calc(100vh-9rem)] lg:min-h-[calc(100vh-4rem)] items-center justify-center md:px-8  pt-20 pb-5 md:pt-0" id="home">
+    <section className="relative z-30 flex min-h-[calc(100vh-9rem)] lg:min-h-[calc(100vh-4rem)] items-center justify-center md:px-8  pt-25 pb-2 md:pt-0" id="home">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30 h-full w-full"></div>
 
       <div className="flex justify-center absolute top-0 right-0 w-full h-full -z-1">
