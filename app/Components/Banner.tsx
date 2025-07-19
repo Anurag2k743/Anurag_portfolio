@@ -24,12 +24,13 @@ export function Banner() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center gap-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors px-6 py-3">
+              <button className="flex items-center gap-2 rounded-full bg-white/10 text-white  transition-colors px-6 py-3">
                 Download Resume
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
-              <button className="flex items-center gap-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors px-6 py-3">
-                Contact Me
+              <button className="flex items-center gap-2 rounded-full bg-white text-blue-600 font-semibold transition-colors px-6 py-3">
+                <a href="#contact"> Contact Me</a>
+               
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
             </div>

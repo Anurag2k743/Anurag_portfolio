@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+
 import { ArrowRightIcon } from "lucide-react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 

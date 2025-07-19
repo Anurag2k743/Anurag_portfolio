@@ -7,15 +7,20 @@
 }
 
 html,body {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   overflow: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;  
+  overflow-x: hidden;    
+}
 
 
 body{
-    font-family: "Space Grotesk", sans-serif;
     overflow: hidden;
+    scrollbar-width: none;       
+
 }
 
 .scrollbar-hidden {
