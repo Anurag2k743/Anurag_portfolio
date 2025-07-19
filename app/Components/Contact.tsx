@@ -36,35 +36,33 @@ export default function Contact() {
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In Touch
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-white max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects
+            I&apos;m always open to discussing new opportunities and interesting projects
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+            <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
             <p className="text-white mb-8">
-              Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+              Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 group  p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+              <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
                 <Mail className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </div>
-              <div className="flex items-center space-x-4 group  p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+              <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
                 <Phone className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
-                    +91 12345 67890
+                  +91 12345 67890
                 </span>
               </div>
-              <div className="flex items-center space-x-4 group  p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+              <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
                 <MapPin className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
                   India
@@ -78,7 +76,8 @@ export default function Contact() {
               <div className="group">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300">
+                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300"
+                >
                   Name
                 </label>
                 <input
@@ -95,7 +94,8 @@ export default function Contact() {
               <div className="group">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300">
+                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300"
+                >
                   Email
                 </label>
                 <input
@@ -124,7 +124,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none hover:border-blue-300"
+                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none hover:border-blue-300"
                   placeholder="Your message..."
                 />
               </div>
