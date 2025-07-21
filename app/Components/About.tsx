@@ -6,8 +6,8 @@ import { Code, Palette, Zap } from "lucide-react"
 
 export default function About() {
   const { ref, inView } = useInView({
-    triggerOnce: false, // animate every time it's in view
-    threshold: 0.2, // how much of the section should be visible before animation starts
+    triggerOnce: false, 
+    threshold: 0.2, 
   })
 
   const highlights = [
@@ -29,13 +29,13 @@ export default function About() {
   ]
 
   return (
+
     <section
       id="about"
       ref={ref}
-      className="pt-20 border-t border-gray-800 text-white  overflow-hidden"
-    >
+      className="pt-10 md:pt-20  text-white scroll-mt-20" >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8  md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             I&apos;m a passionate frontend developer with expertise in modern web technologies
@@ -48,8 +48,8 @@ export default function About() {
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
-            className="pr-0 lg:pr-20"
-          >
+            className="pr-0 lg:pr-20">
+              
             <h3 className="text-2xl font-bold mb-6">My Journey</h3>
             <p className="text-gray-300 mb-4">
               As a frontend developer, I specialize in creating responsive and interactive web applications. My journey
@@ -66,16 +66,16 @@ export default function About() {
           </motion.div>
 
           {/* Right section: highlights */}
+          
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
+            className="space-y-6">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 bg-[#1d2229] p-6 rounded-lg hover-lift group cursor-pointer hover:shadow-[0_4px_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1c1d20] shadow-[0_0_10px_rgba(59,130,246,0.2)] backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer hover:shadow-[0_4px_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
               >
                 <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
@@ -86,6 +86,7 @@ export default function About() {
                 </div>
               </div>
             ))}
+
           </motion.div>
         </div>
       </div>

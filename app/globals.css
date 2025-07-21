@@ -5,29 +5,61 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
-html,body {
-  scroll-behavior: smooth !important;
-  overflow: hidden;
+html {
+  scroll-behavior: smooth; /* No !important needed here */
+  overflow-x: hidden; /* Prevents horizontal scrollbars from animations */
 }
 
-body::-webkit-scrollbar {
-  display: none;  
-  overflow-x: hidden;    
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: 'GT Walsheim-bold';
+  src: url('/fonts/GT-Walsheim-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Walsheim-light';
+  src: url('/fonts/GT-Walsheim-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GT Walsheim-medium';
+  src: url('/fonts/GT-Walsheim-medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Walsheim-Regular';
+  src: url('/fonts/GT-Walsheim-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Walsheim-Thin';
+  src: url('/fonts/GT-Walsheim-Thin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal; 
+}
+
+p,span,button,li ,a{
+  font-family: 'GT Walsheim-Regular';
+}
+
+h1{
+  font-family: 'GT Walsheim-bold';
 }
 
 
-body{
-    overflow: hidden;
-    scrollbar-width: none;       
-
-}
-
-.scrollbar-hidden {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}

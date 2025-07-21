@@ -13,29 +13,26 @@ export default function Footer() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-200"
-            >
-              <Github size={24} />
+              className="text-gray-400 hover:text-white transition-colors duration-200">
+              <Github size={24} className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-200"
-            >
-              <Linkedin size={24} />
+              className="text-gray-400 hover:text-white transition-colors duration-200">
+              <Linkedin size={24} className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
             </a>
             <a
-              href="mailto:anurag@example.com"
-              className="text-gray-400 hover:text-white transition-colors duration-200"
-            >
-              <Mail size={24} />
+              href="anurag:vashishtanurag@gmail.com"
+              className="text-gray-400 hover:text-white transition-colors duration-200" >
+              <Mail size={24}  className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2"/>
             </a>
           </div>
 
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-400 flex items-center justify-center gap-2">
-              Made with <Heart size={16} className="text-red-500" /> by Anurag Vashisht © 2024
+              Made with <Heart size={16} className="text-red-500" /> by Anurag Vashisht © {new Date().getFullYear()}
             </p>
           </div>
         </div>

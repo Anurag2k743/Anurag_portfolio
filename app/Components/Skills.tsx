@@ -1,4 +1,7 @@
-"use client"
+"use client";
+
+import { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function Skills() {
   const skillCategories = [
@@ -32,42 +35,66 @@ export default function Skills() {
         { name: "Postman", level: 75 },
       ],
     },
-  ]
+  ];
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "0px 0px -20% 0px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
+  const barVariants = (level: number) => ({
+    hidden: { width: 0 },
+    visible: { width: `${level}%` },
+  });
 
   return (
-    <section id="skills" className="pt-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section
+      id="skills"
+      className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20"
+    >
+      <div className="max-w-7xl mx-auto" ref={ref}>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
             Skills & Expertise
           </h2>
-          <p className="text-white max-w-2xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life
+          <p className="text-gray-300 max-w-xl mx-auto text-sm sm:text-base">
+            Here are the technologies and tools I work with to bring ideas to
+            life
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className=" bg-[#1d2229] p-6 rounded-lg  group cursor-pointerl hover:shadow-[0_4px_20px_rgba(59,130,246,0.3)] transition-shadow duration-300" >
-              <h3 className="text-xl font-bold mb-6 text-center group-hover:scale-105 transition-transform duration-300">
+              className="relative rounded-xl border border-white/10 bg-gradient-to-br from-[#111215] to-[#1c1d20] p-6 shadow-inner backdrop-blur-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300" >
+              <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
+
+              <h3 className="relative text-lg sm:text-xl font-semibold text-white mb-5 text-center z-10">
                 {category.title}
               </h3>
-              <div className="space-y-4">
+              <div className="relative space-y-4 z-10">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="group/skill">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-white font-medium group-hover/skill:text-blue-600 transition-colors duration-300">
-                        {skill.name}
-                      </span>
-                      <span className="text-white">{skill.level}%</span>
+                  <div key={skillIndex}>
+                    <div className="flex justify-between mb-1 text-sm sm:text-base text-white">
+                      <span>{skill.name}</span>
+                      <span>{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <div
+                    <div className="w-full bg-gray-700/30 rounded-full h-2">
+                      <motion.div
                         className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
+                        variants={barVariants(skill.level)}
+                        initial="hidden"
+                        animate={controls}
+                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                      ></motion.div>
                     </div>
                   </div>
                 ))}
@@ -77,5 +104,7 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
+
+

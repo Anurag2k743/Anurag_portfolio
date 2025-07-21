@@ -16,16 +16,15 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000))
-
     console.log("Form submitted:", formData)
     setFormData({ name: "", email: "", message: "" })
     setIsSubmitting(false)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -33,9 +32,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-10 md:py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-white max-w-2xl mx-auto">
             I&apos;m always open to discussing new opportunities and interesting projects
@@ -43,6 +42,7 @@ export default function Contact() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
+          {/* LEFT PANEL */}
           <div>
             <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
             <p className="text-white mb-8">
@@ -51,19 +51,21 @@ export default function Contact() {
 
             <div className="space-y-4">
               <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Mail className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <Mail className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
                 <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </div>
+
               <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Phone className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <Phone className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
                 <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
-                  +91 12345 67890
+                  +91 7876212773
                 </span>
               </div>
+
               <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <MapPin className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <MapPin className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
                 <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
                   India
                 </span>
@@ -71,13 +73,11 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-[#1d2229] p-8 rounded-lg shadow-lg hover-lift transition-all duration-500">
+          {/* RIGHT PANEL */}
+          <div className="bg-gradient-to-br from-[#111215] to-[#1c1d20] shadow-[0_0_10px_rgba(59,130,246,0.2)] backdrop-blur-md p-8 rounded-lg hover-lift transition-all duration-500">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="group">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300"
-                >
+                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                   Name
                 </label>
                 <input
@@ -91,11 +91,9 @@ export default function Contact() {
                   placeholder="Your Name"
                 />
               </div>
+
               <div className="group">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                   Email
                 </label>
                 <input
@@ -111,10 +109,7 @@ export default function Contact() {
               </div>
 
               <div className="group">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-white mb-2 group-focus-within:text-blue-600 transition-colors duration-300"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                   Message
                 </label>
                 <textarea

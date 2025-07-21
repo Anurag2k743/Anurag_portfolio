@@ -125,12 +125,12 @@ export default function CodeFlowAnimation() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full min-h-[60vh] overflow-hidden bg-gray-950 flex items-center justify-center"
+      className="relative w-full min-h-[60vh] overflow-hidden  flex items-center justify-center"
     >
       {codeSnippets.map((snippet, i) => (
         <motion.div
           key={`code-${i}`}
-          className={`absolute bg-gray-800/60 backdrop-blur-sm rounded-lg p-3 text-xs font-mono border border-gray-700 shadow-lg ${snippet.color}`}
+          className={`absolute  backdrop-blur-sm rounded-lg p-3 text-xs font-mono border border-gray-700 shadow-lg ${snippet.color}`}
           style={{
             top: snippet.top,
             left: snippet.left,
