@@ -96,7 +96,7 @@ export default function Skills() {
                       </div>
                       <div className="w-full bg-gray-700/30 rounded-full h-2">
                         <motion.div
-                          className="bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] h-2 rounded-full"
+                          className="bg-[linear-gradient(90deg,_#D71F26,_#FF7B1C)] h-2 rounded-full"
                           variants={barVariants(skill.level)}
                           initial="hidden"
                           animate={controls}

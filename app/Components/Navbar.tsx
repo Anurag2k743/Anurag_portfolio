@@ -43,7 +43,7 @@ export function Header() {
 
   const navLinkClass = (id: string) =>
     `text-m font-semibold transition-colors ${
-      activeSection === id ? "text-[#FF7B1C] underline" : "text-white hover:text-[#FF7B1C] underline-hide"
+      activeSection === id ? "bg-gradient-to-r from-[#D71F26] to-[#FF7B1C] bg-clip-text text-transparent underline text-lg" : "text-white hover:text-[#FF7B1C] underline-hide text  "
     }`;
 
   return (
@@ -63,7 +63,7 @@ export function Header() {
           <Link
             href="#contact"
             className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] transition-colors">
-            <span className="text-m font-semibold">Contact Me</span>
+            <span className="text-lg font-semibold">Contact Me</span>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
         </div>

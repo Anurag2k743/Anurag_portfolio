@@ -34,9 +34,9 @@ export default function Contact() {
   return (
     <section id="contact" className="py-10 md:py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-white max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto text-lg">
             I&apos;m always open to discussing new opportunities and interesting projects
           </p>
         </div>
@@ -45,27 +45,28 @@ export default function Contact() {
           {/* LEFT PANEL */}
           <div>
             <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
-            <p className="text-white mb-8">
+            <p className="text-white mb-8 text-lg">
               Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Mail className="w-8 h-8  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] text-white" />
+              <div className="flex items-center space-x-4 group  rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+                <Mail className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
                 <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </div>
+              
 
-              <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Phone className="w-8 h-8  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] text-white" />
+              <div className="flex items-center space-x-4 group  rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+                <Phone className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
                 <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
                   +91 7876212773
                 </span>
               </div>
 
-              <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <MapPin className="w-8 h-8  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)]" />
+              <div className="flex items-center space-x-4 group  rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+                <MapPin className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600 " />
                 <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
                   India
                 </span>
@@ -127,7 +128,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[linear-gradient(90deg,_#D71F26,_#FF7B1C)] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

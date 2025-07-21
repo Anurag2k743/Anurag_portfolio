@@ -14,19 +14,19 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-200">
-              <Github size={24} className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
+              <Github size={24} className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-200">
-              <Linkedin size={24} className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
+              <Linkedin size={24} className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
             </a>
             <a
               href="anurag:vashishtanurag@gmail.com"
               className="text-gray-400 hover:text-white transition-colors duration-200" >
-              <Mail size={24}  className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2"/>
+              <Mail size={24}  className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600"/>
             </a>
           </div>
 
