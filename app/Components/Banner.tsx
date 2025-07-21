@@ -40,16 +40,12 @@ export function Banner() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-xl shadow-md hover:shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-all duration-300 hover:-translate-y-1"
+                className="w-12 h-12 bg-white/10 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center text-orange-500 hover:text-orange-600 transition-all duration-300 hover:-translate-y-1"
               >
                 <Github size={20} />
               </a>
 
-            
-
-
-
-
+          
               <a
                 href="https://linkedin.com"
                 target="_blank"
