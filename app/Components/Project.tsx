@@ -63,7 +63,7 @@ export default function Projects() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
 
-                            <div className="p-6 bg-gradient-to-br from-[#111215] to-[#1c1d20] shadow-inner backdrop-blur-md">
+                            <div className="p-6">
                                 <h3 className="text-xl font-bold mb-3 transition-colors duration-300">
                                     {project.title}
                                 </h3>
@@ -73,7 +73,7 @@ export default function Projects() {
                                     {project.technologies.map((tech, techIndex) => (
                                         <span
                                             key={techIndex}
-                                            className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full hover:bg-blue-200 transition-colors duration-300 cursor-default"
+                                            className="px-3 py-1 bg-white text-gray-500 text-sm rounded-full hover:bg-blue-200 transition-colors duration-300 cursor-default"
                                         >
                                             {tech}
                                         </span>
@@ -83,7 +83,7 @@ export default function Projects() {
                                 <div className="flex space-x-4">
                                     <a
                                         href={project.liveUrl}
-                                        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 group/link"
+                                        className="flex items-center gap-2 text-orange-500 hover:text-orange-800 transition-all duration-300 hover:scale-105 group/link"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -92,7 +92,7 @@ export default function Projects() {
                                     </a>
                                     <a
                                         href={project.githubUrl}
-                                        className="flex items-center gap-2 text-white hover:text-gray-800 transition-all duration-300 hover:scale-105 group/link"
+                                        className="flex items-center gap-2 text-white  transition-all duration-300 hover:scale-105 group/link"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >

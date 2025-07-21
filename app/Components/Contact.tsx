@@ -51,22 +51,22 @@ export default function Contact() {
 
             <div className="space-y-4">
               <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Mail className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
-                <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
+                <Mail className="w-8 h-8  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] text-white" />
+                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </div>
 
               <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Phone className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
-                <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
+                <Phone className="w-8 h-8  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] text-white" />
+                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
                   +91 7876212773
                 </span>
               </div>
 
               <div className="flex items-center space-x-4 group p-3 rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <MapPin className="w-8 h-8 text-gray-600 group-hover:scale-110 transition-transform duration-300 bg-white rounded p-2" />
-                <span className="text-white group-hover:text-blue-600 transition-colors duration-300">
+                <MapPin className="w-8 h-8  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)]" />
+                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
                   India
                 </span>
               </div>
@@ -74,7 +74,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT PANEL */}
-          <div className="bg-gradient-to-br from-[#111215] to-[#1c1d20] shadow-[0_0_10px_rgba(59,130,246,0.2)] backdrop-blur-md p-8 rounded-lg hover-lift transition-all duration-500">
+          <div className="bg-gradient-to-br from-[#111215] to-[#1c1d20]p-8 rounded-lg hover-lift transition-all duration-500">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="group">
                 <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
@@ -87,7 +87,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg"
                   placeholder="Your Name"
                 />
               </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-blue-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg "
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none hover:border-blue-300"
+                  className="w-full px-4 py-3 border rounded-lg resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -127,7 +127,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

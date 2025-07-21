@@ -12,7 +12,7 @@ export default function About() {
 
   const highlights = [
     {
-      icon: <Code className="w-8 h-8 text-blue-500" />,
+      icon: <Code className="w-8 h-8 text-orange-500" />,
       title: "Clean Code",
       description: "Writing maintainable, scalable, and well-documented code following best practices.",
     },
@@ -75,7 +75,7 @@ export default function About() {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1c1d20] shadow-[0_0_10px_rgba(59,130,246,0.2)] backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer hover:shadow-[0_4px_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1c1d20]  backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer "
               >
                 <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}

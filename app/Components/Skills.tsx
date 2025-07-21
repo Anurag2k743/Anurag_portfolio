@@ -74,30 +74,41 @@ export default function Skills() {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="relative rounded-xl border border-white/10 bg-gradient-to-br from-[#111215] to-[#1c1d20] p-6 shadow-inner backdrop-blur-xl hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300" >
-              <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
+              className="relative group rounded-xl overflow-hidden transition-all duration-300"
+            >
+              {/* Animated gradient border */}
+              <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-r from-[#D71F26] to-[#FF7B1C] opacity-0 group-hover:opacity-100 transition duration-500 blur-md" />
 
-              <h3 className="relative text-lg sm:text-xl font-semibold text-white mb-5 text-center z-10">
-                {category.title}
-              </h3>
-              <div className="relative space-y-4 z-10">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-1 text-sm sm:text-base text-white">
-                      <span>{skill.name}</span>
-                      <span>{skill.level}%</span>
+              {/* Inset content box to reveal glow */}
+              <div className="relative z-10 m-[1px] rounded-[calc(0.75rem-1px)] border border-white/10 bg-gradient-to-br from-[#111215] to-[#1c1d20] p-6 shadow-inner backdrop-blur-xl">
+                {/* Optional radial inner glow */}
+                <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
+
+                <h3 className="relative text-lg sm:text-xl font-semibold text-white mb-5 text-center z-10">
+                  {category.title}
+                </h3>
+                <div className="relative space-y-4 z-10">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex}>
+                      <div className="flex justify-between mb-1 text-sm sm:text-base text-white">
+                        <span>{skill.name}</span>
+                        <span>{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-gray-700/30 rounded-full h-2">
+                        <motion.div
+                          className="bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] h-2 rounded-full"
+                          variants={barVariants(skill.level)}
+                          initial="hidden"
+                          animate={controls}
+                          transition={{
+                            duration: 1,
+                            delay: skillIndex * 0.1,
+                          }}
+                        ></motion.div>
+                      </div>
                     </div>
-                    <div className="w-full bg-gray-700/30 rounded-full h-2">
-                      <motion.div
-                        className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
-                        variants={barVariants(skill.level)}
-                        initial="hidden"
-                        animate={controls}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                      ></motion.div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -106,5 +117,3 @@ export default function Skills() {
     </section>
   );
 }
-
-

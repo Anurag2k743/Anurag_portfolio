@@ -3,7 +3,7 @@ import Animation from "./Animation";
 
 export function Banner() {
   return (
-    <section className="relative z-30 flex min-h-[calc(100vh-9rem)] md:min-h-[calc(100vh-1rem)] items-center justify-center md:px-8 lg:py-24 pt-20 pb-5 md:pt-0" id="home">
+    <section className="relative z-30 flex min-h-[calc(100vh-9rem)] md:min-h-[calc(100vh-3rem)] items-center justify-center md:px-8 lg:py-24 pt-20 pb-5 md:pt-0" id="home">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30 h-full w-full"></div>
 
       <div className="flex justify-center absolute top-0 right-0 w-full h-full -z-1">
@@ -24,11 +24,11 @@ export function Banner() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center gap-2 rounded-full bg-white/10 text-white  transition-colors px-6 py-3">
+              <button className="flex items-center gap-2 rounded-full bg-white/10 text-white  transition-colors px-5 py-2">
                 Download Resume
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
-              <button className="flex items-center gap-2 rounded-full bg-white text-blue-600 font-semibold transition-colors px-6 py-3">
+              <button className="flex items-center gap-2 rounded-full  text-white font-semibold transition-colors px-5 py-2 bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)]">
                 <a href="#contact"> Contact Me</a>
       
                 <ArrowRightIcon className="h-4 w-4" />

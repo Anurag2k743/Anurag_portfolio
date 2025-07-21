@@ -25,13 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen overflow-x-hidden  text-white relative bg-[#0a0a0b]  overflow-y-auto scrollbar-hidden`}>
-        <div className="absolute inset-0 z-[-3] bg-gradient-to-br from-[#0b0b0c] via-[#111112] to-[#0a0a0b]" />
-
-        <div className="pointer-events-none absolute inset-0 z-[-2] opacity-30">
-          <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 h-[500px] w-[600px] bg-[#3b82f6] rounded-full blur-[160px] opacity-40" />
-          <div className="absolute top-[-10%] left-[-10%] h-[400px] w-[400px] bg-[#ff1a1a] rounded-full blur-[140px] opacity-25" />
-          <div className="absolute top-0  h-[300px] w-[300px] bg-[#ff6600] rounded-full blur-[100px] opacity-20" />
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen overflow-x-hidden text-white relative bg-black overflow-y-auto scrollbar-hidden`}
+      >
+        <div className="absolute inset-0 z-[-3] bg-black">
+          <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 h-[800px] w-[800px] rounded-full bg-[radial-gradient(closest-side,_#391315,_#452239,_#111433,_#000)] blur-[180px] opacity-80 animate-pulse-slow" />
+          <div className="absolute top-[20%] left-[60%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(closest-side,_#452239,_#111433,_#000)] blur-[140px] opacity-30" />
         </div>
 
         {children}

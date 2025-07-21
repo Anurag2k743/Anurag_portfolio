@@ -43,11 +43,11 @@ export function Header() {
 
   const navLinkClass = (id: string) =>
     `text-m font-semibold transition-colors ${
-      activeSection === id ? "text-blue-500" : "text-white hover:text-blue-500"
+      activeSection === id ? "text-[#FF7B1C] underline" : "text-white hover:text-[#FF7B1C] underline-hide"
     }`;
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 w-full px-4 md:px-6">
+    <header className="fixed top-6 left-0 right-0 z-50 w-full px-4 md:px-6">
       <div className="max-w-8xl mx-auto flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-lg">
         <div className="text-xl font-bold text-white">Anurag Vashisht</div>
 
@@ -62,8 +62,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="#contact"
-            className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-white hover:bg-white/20 transition-colors"
-          >
+            className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] transition-colors">
             <span className="text-m font-semibold">Contact Me</span>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
@@ -80,16 +79,15 @@ export function Header() {
             <Link
               key={id}
               className={`block font-medium ${
-                activeSection === id ? "text-blue-500" : "text-white hover:text-blue-500"
+                activeSection === id ? "text-orange-500" : "text-white hover:text-orange-500"
               }`}
               href={`#${id}`}
-              onClick={toggleMenu}
-            >
+              onClick={toggleMenu}>
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </Link>
           ))}
           <Link
-            className="block font-medium hover:text-blue-500"
+            className="block font-medium hover:text-orange-500"
             href="#contact"
             onClick={toggleMenu}
           >
