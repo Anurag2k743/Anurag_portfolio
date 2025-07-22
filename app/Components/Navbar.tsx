@@ -62,7 +62,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="#contact"
-            className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-[linear-gradient(178.96deg,_#D71F26_-26.25%,_#FF7B1C_93.45%)] transition-colors">
+            className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-[linear-gradient(90deg,_#D71F26,_#FF7B1C)] transition-colors">
             <span className="text-lg font-semibold">Contact Me</span>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>

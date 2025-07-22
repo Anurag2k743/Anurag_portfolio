@@ -27,9 +27,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen overflow-x-hidden text-white relative bg-black overflow-y-auto scrollbar-hidden`}
       >
+        {/* 🔴 Stable red-orange radial gradients (no animation) */}
         <div className="absolute inset-0 z-[-3] bg-black">
-          <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 h-[800px] w-[800px] rounded-full bg-[radial-gradient(closest-side,_#391315,_#452239,_#111433,_#000)] blur-[180px] opacity-80 animate-pulse-slow" />
-          <div className="absolute top-[20%] left-[60%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(closest-side,_#452239,_#111433,_#000)] blur-[140px] opacity-30" />
+          <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-[radial-gradient(closest-side,_#D71F26,_#FF7B1C,_#000)] blur-[100px] opacity-80" />
+          <div className="absolute top-[20%] left-[60%] h-[250px] w-[250px] rounded-full bg-[radial-gradient(closest-side,_#FF7B1C,_#000)] blur-[80px] opacity-30" />
         </div>
 
         {children}

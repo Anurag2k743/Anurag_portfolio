@@ -55,10 +55,7 @@ export default function Skills() {
   });
 
   return (
-    <section
-      id="skills"
-      className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20"
-    >
+    <section id="skills" className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20" >
       <div className="max-w-7xl mx-auto" ref={ref}>
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
@@ -74,14 +71,10 @@ export default function Skills() {
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="relative group rounded-xl overflow-hidden transition-all duration-300"
-            >
+              className="relative group rounded-xl overflow-hidden transition-all duration-300" >
               {/* Animated gradient border */}
               <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-r from-[#D71F26] to-[#FF7B1C] opacity-0 group-hover:opacity-100 transition duration-500 blur-md" />
-
-              {/* Inset content box to reveal glow */}
               <div className="relative z-10 m-[1px] rounded-[calc(0.75rem-1px)] border border-white/10 bg-gradient-to-br from-[#111215] to-[#1c1d20] p-6 shadow-inner backdrop-blur-xl">
-                {/* Optional radial inner glow */}
                 <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
 
                 <h3 className="relative text-lg sm:text-xl font-semibold text-white mb-5 text-center z-10">

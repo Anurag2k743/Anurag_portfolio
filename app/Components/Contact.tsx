@@ -75,7 +75,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT PANEL */}
-          <div className="bg-gradient-to-br from-[#111215] to-[#1c1d20]p-8 rounded-lg hover-lift transition-all duration-500">
+          <div className="bg-gradient-to-br from-[#111215] to-[#1c1d20] p-8 rounded-lg hover-lift transition-all duration-500">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="group">
                 <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
