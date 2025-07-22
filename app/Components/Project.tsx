@@ -88,7 +88,7 @@ export default function Projects() {
                 width={400}
                 height={300}
               />
-              <h3 className="text-xl font-semibold mb-2 text-white">
+              <h3 className="text-xl font-black mb-2 text-white">
                 {project.title}
               </h3>
               <p className="text-white mb-4">{project.description}</p>
