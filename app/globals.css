@@ -6,39 +6,19 @@
   padding: 0 20px;
 }
 html {
-  scroll-behavior: smooth; /* No !important needed here */
-  overflow-x: hidden; /* Prevents horizontal scrollbars from animations */
+  scroll-behavior: smooth; 
+  overflow-x: hidden; 
 }
 
-/* Hide scrollbar for Firefox */
+
 html {
   scrollbar-width: none;
 }
 
-/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
 html::-webkit-scrollbar {
   display: none;
 }
 
-@font-face {
-  font-family: 'GT Walsheim-bold';
-  src: url('/fonts/GT-Walsheim-bold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GT Walsheim-light';
-  src: url('/fonts/GT-Walsheim-light.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'GT Walsheim-medium';
-  src: url('/fonts/GT-Walsheim-medium.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'GT Walsheim-Regular';
@@ -47,12 +27,6 @@ html::-webkit-scrollbar {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'GT Walsheim-Thin';
-  src: url('/fonts/GT-Walsheim-Thin.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal; 
-}
 
 p,span,button,li ,a{
   font-family: 'GT Walsheim-Regular';
@@ -62,35 +36,10 @@ h1{
   font-family: 'GT Walsheim-bold';
 }
 
-
-  /* @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.8;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.03);
-    }
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 6s ease-in-out infinite;
-  } */
-
-
-
-.neon-text {
-    color: #fff;
-    text-shadow: 0 0 1px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
-    animation: glow 1.5s infinite alternate;
+/* globals.css or your component CSS */
+.custom-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
 }
 
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
-    }
-    100% {
-        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
-    }
-}
+
+

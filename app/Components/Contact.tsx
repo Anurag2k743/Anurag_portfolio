@@ -43,39 +43,55 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* LEFT PANEL */}
-          <div>
-            <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
-            <p className="text-white mb-8 text-lg">
-              Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.
-            </p>
 
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 group  rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Mail className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
-                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
-                  anuragvashisht743@gmail.com
-                </span>
-              </div>
-              
+         <div>
+  <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+  <p className="text-white mb-8 text-lg">
+    Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+  </p>
 
-              <div className="flex items-center space-x-4 group  rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <Phone className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
-                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
-                  +91 7876212773
-                </span>
-              </div>
+  <div className="space-y-4">
+    {/* Email */}
+    <a
+      href="mailto:anuragvashisht743@gmail.com"
+      className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
+    >
+      <Mail className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
+      <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
+        anuragvashisht743@gmail.com
+      </span>
+    </a>
 
-              <div className="flex items-center space-x-4 group  rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <MapPin className="w-9 h-9  group-hover:scale-110 transition-transform duration-300  rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600 " />
-                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
-                  India
-                </span>
-              </div>
-            </div>
-          </div>
+    {/* Phone */}
+    <a
+      href="tel:+917876212773"
+      className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
+    >
+      <Phone className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
+      <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
+        +91 7876212773
+      </span>
+    </a>
+
+    {/* Location */}
+    <a
+      href="https://maps.app.goo.gl/Mae2RG9jjGoM8U7V9"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+      <MapPin className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
+      <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
+        Dharmshal Himachal Pradesh, India
+      </span>
+    </a>
+  </div>
+</div>
+
+
+
 
           {/* RIGHT PANEL */}
-          <div className="bg-gradient-to-br from-[#111215] to-[#1c1d20] p-8 rounded-lg hover-lift transition-all duration-500">
+          <div className="bg-gradient-to-br from-[#111215] to-[#1a1a1a] p-8 rounded-lg hover-lift transition-all duration-500">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="group">
                 <label htmlFor="name" className="block text-sm font-medium text-white mb-2">

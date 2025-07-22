@@ -50,7 +50,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="pr-0 lg:pr-20">
               
-            <h3 className="text-2xl font-bold mb-6">My Journey</h3>
+            <h2 className="text-4xl font-bold mb-6">My Journey</h2>
             <p className="text-gray-300 mb-4 text-lg">
               As a frontend developer, I specialize in creating responsive and interactive web applications. My journey
               began with HTML and CSS, and I&apos;ve evolved to master modern frameworks like React.js and Next.js.
@@ -75,7 +75,7 @@ export default function About() {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1c1d20]  backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer border border-white/40"
+                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1a1a1a]  backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer border border-white/40"
               >
                 <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}

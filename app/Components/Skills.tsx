@@ -74,7 +74,7 @@ export default function Skills() {
               className="relative group rounded-xl overflow-hidden transition-all duration-300" >
               {/* Animated gradient border */}
               <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-r from-[#D71F26] to-[#FF7B1C] opacity-0 group-hover:opacity-100 transition duration-500 blur-md" />
-              <div className="relative z-10 m-[1px] rounded-[calc(0.75rem-1px)] border border-white/10 bg-gradient-to-br from-[#111215] to-[#1c1d20] p-6 shadow-inner backdrop-blur-xl">
+              <div className="relative z-10 m-[1px] rounded-[calc(0.75rem-1px)] border border-white/10 bg-gradient-to-br from-[#111215] to-[#1a1a1a] p-6 shadow-inner backdrop-blur-xl">
                 <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
 
                 <h3 className="relative text-lg sm:text-xl font-semibold text-white mb-5 text-center z-10">

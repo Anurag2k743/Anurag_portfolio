@@ -1,10 +1,12 @@
 import About from "./Components/About";
 import { Banner } from "./Components/Banner";
 import Contact from "./Components/Contact";
+import Copyright from "./Components/Copyright";
 import Footer from "./Components/Footer";
 import { Header } from "./Components/Navbar";
 import Projects from "./Components/Project";
 import Skills from "./Components/Skills";
+import SkillsSlider from "./Components/SkillsSlider";
 
 
 export default function Home() {
@@ -14,11 +16,13 @@ export default function Home() {
       <div className="h-screen overflow-y-auto text-white">
         <Header />
         <Banner/>
+        <SkillsSlider/>
         <About/>
         <Skills/>
         <Projects />
         <Contact/>
         <Footer/>
+        <Copyright />
       </div>
     </>
 
