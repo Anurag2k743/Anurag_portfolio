@@ -43,7 +43,7 @@ export function Header() {
 
   const navLinkClass = (id: string) =>
     `text-md  transition-colors ${
-      activeSection === id ? "bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent underline font-semibold text-md" : "text-white hover:text-[#FF7B1C] underline-hide text-md  "
+      activeSection === id ? "bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent underline font-semibold text-md" : "text-white  underline-hide text-md  "
     }`;
 
   return (
