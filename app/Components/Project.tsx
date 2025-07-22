@@ -106,7 +106,7 @@ export default function Projects() {
               <div className="flex space-x-4">
                 <a
                   href={project.liveUrl}
-                  className="flex items-center gap-2 text-orange-500 hover:text-orange-800 transition-all duration-300 hover:scale-105 group/link"
+                  className="flex items-center gap-2 text-purple-500 hover:text-purple-800 transition-all duration-300 hover:scale-105 group/link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

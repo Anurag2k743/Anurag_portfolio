@@ -14,16 +14,16 @@ export default function Footer() {
 
        <div className="flex flex-col items-center  gap-6">
           <nav className="space-x-6  py-6">
-            <Link href="#home" className="text-white hover:text-orange-500 hover:underline transition duration-300">
+            <Link href="#home" className="text-white hover:text-purple-500 hover:underline transition duration-300">
               Home
             </Link>
-            <Link href="#about" className="text-white hover:text-orange-500 transition duration-300 hover:underline">
+            <Link href="#about" className="text-white hover:text-purple-500 transition duration-300 hover:underline">
               About
             </Link>
-            <Link href="#projects" className="text-white hover:text-orange-500 transition duration-300 hover:underline">
+            <Link href="#projects" className="text-white hover:text-purple-500 transition duration-300 hover:underline">
               Projects
             </Link>
-            <Link href="#contact" className="text-white hover:text-orange-500 transition duration-300 hover:underline">
+            <Link href="#contact" className="text-white hover:text-purple-500 transition duration-300 hover:underline">
               Contact
             </Link>
           </nav>
@@ -32,7 +32,7 @@ export default function Footer() {
             <a href="https://github.com/Anurag2k743" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <Github
                 size={24}
-                className="w-9 h-9 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:scale-110 hover:text-orange-600"
+                className="w-9 h-9 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:scale-110 hover:text-purple-600"
               />
             </a>
             <a
@@ -43,13 +43,13 @@ export default function Footer() {
             >
               <Linkedin
                 size={24}
-                className="w-9 h-9 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:scale-110 hover:text-orange-600"
+                className="w-9 h-9 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:scale-110 hover:text-purple-600"
               />
             </a>
             <a href="mailto:vashishtanurag@gmail.com" aria-label="Email">
               <Mail
                 size={24}
-                className="w-9 h-9 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:scale-110 hover:text-orange-600"
+                className="w-9 h-9 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:scale-110 hover:text-purple-600"
               />
             </a>
           </div>

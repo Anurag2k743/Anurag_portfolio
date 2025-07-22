@@ -55,8 +55,8 @@ export default function Contact() {
                 href="mailto:anuragvashisht743@gmail.com"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
-                <Mail className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
-                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
+                <Mail className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
+                <span className="text-white group-hover:text-purple-500 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </a>
@@ -66,8 +66,8 @@ export default function Contact() {
                 href="tel:+917876212773"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
-                <Phone className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
-                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
+                <Phone className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
+                <span className="text-white group-hover:text-purple-500 transition-colors duration-300">
                   +91 7876212773
                 </span>
               </a>
@@ -78,8 +78,8 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer">
-                <MapPin className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-orange-500 hover:text-orange-600" />
-                <span className="text-white group-hover:text-orange-500 transition-colors duration-300">
+                <MapPin className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
+                <span className="text-white group-hover:text-purple-500 transition-colors duration-300">
                   Dharmshal Himachal Pradesh, India
                 </span>
               </a>
@@ -140,7 +140,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[linear-gradient(90deg,_#D71F26,_#FF7B1C)] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

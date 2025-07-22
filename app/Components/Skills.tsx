@@ -73,7 +73,7 @@ export default function Skills() {
               key={categoryIndex}
               className="relative group rounded-xl overflow-hidden transition-all duration-300" >
               {/* Animated gradient border */}
-              <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-r from-[#D71F26] to-[#FF7B1C] opacity-0 group-hover:opacity-100 transition duration-500 blur-lg" />
+              <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-r from-purple-600 to-blue-500  opacity-0 group-hover:opacity-100 transition duration-500 blur-lg" />
               <div className="relative z-10 m-[2px] rounded-[calc(0.75rem-1px)] border border-white/10 bg-gradient-to-br from-[#111215] to-[#1a1a1a] p-6 shadow-inner backdrop-blur-xl">
                 <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
 
@@ -89,7 +89,7 @@ export default function Skills() {
                       </div>
                       <div className="w-full bg-gray-700/30 rounded-full h-2">
                         <motion.div
-                          className="bg-[linear-gradient(90deg,_#D71F26,_#FF7B1C)] h-2 rounded-full"
+                          className="bg-gradient-to-r from-purple-600 to-blue-500  h-2 rounded-full"
                           variants={barVariants(skill.level)}
                           initial="hidden"
                           animate={controls}

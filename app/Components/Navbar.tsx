@@ -43,7 +43,7 @@ export function Header() {
 
   const navLinkClass = (id: string) =>
     `text-md  transition-colors ${
-      activeSection === id ? "bg-gradient-to-r from-[#D71F26] to-[#FF7B1C] bg-clip-text text-transparent underline text-md" : "text-white hover:text-[#FF7B1C] underline-hide text-md  "
+      activeSection === id ? "bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent underline font-semibold text-md" : "text-white hover:text-[#FF7B1C] underline-hide text-md  "
     }`;
 
   return (
@@ -62,7 +62,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="#contact"
-            className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-[linear-gradient(90deg,_#D71F26,_#FF7B1C)] transition-colors hover:bg-[#1a1a1a]">
+            className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-gradient-to-r from-purple-600 to-blue-500 transition-colors ">
             <span className="text-md">Contact Me</span>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
