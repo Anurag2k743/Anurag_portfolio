@@ -3,9 +3,9 @@ import React from 'react'
 const Copyright = () => {
   return (
     <div>
-      <div className="bg-[#1a1a1a] border-t border-gray-800 py-6">
+      <div className=" border-t border-gray-800 py-6">
         <p className="text-white flex items-center justify-center gap-2">
-          © {new Date().getFullYear()} Made with ❤️ by Anurag Vashisht
+          Copy © {new Date().getFullYear()} All rights reserved 
         </p>
       </div>
     </div>

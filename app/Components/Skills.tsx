@@ -57,7 +57,7 @@ export default function Skills() {
   return (
     <section id="skills" className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20" >
       <div className="max-w-7xl mx-auto" ref={ref}>
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
             Skills & Expertise
           </h2>

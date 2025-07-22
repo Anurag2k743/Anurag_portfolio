@@ -58,8 +58,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="pt-10 md:pt-20 scroll-mt-30">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center md:mb-12">
+      <div className="container">
+        <div className="text-center md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Featured Projects
           </h2>
@@ -84,7 +84,7 @@ export default function Projects() {
               <Image
                 src={project.image}
                 alt={project.title}
-                className="w-full max-h-90 object-cover transition-transform duration-500 hover:scale-105 mb-4"
+                className="w-full  object-cover transition-transform duration-500 hover:scale-105 mb-4 rounded-lg"
                 width={400}
                 height={300}
               />

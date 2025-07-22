@@ -9,7 +9,9 @@ html {
   scroll-behavior: smooth; 
   overflow-x: hidden; 
 }
-
+html, body {
+  overflow-x: hidden;
+}
 
 html {
   scrollbar-width: none;
@@ -36,10 +38,10 @@ h1{
   font-family: 'GT Walsheim-bold';
 }
 
-/* globals.css or your component CSS */
+/* globals.css or your component CSS
 .custom-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
-}
+} */
 
 
 

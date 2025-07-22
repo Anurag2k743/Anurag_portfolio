@@ -47,7 +47,7 @@ export function Header() {
     }`;
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 w-full px-4 md:px-6">
+    <header className="fixed top-8 left-0 right-0 z-50 w-full px-4 md:px-6">
       <div className="max-w-8xl mx-auto flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-lg">
         <div className="text-xl font-bold text-white">Anurag Vashisht</div>
 

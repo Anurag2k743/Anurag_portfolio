@@ -42,7 +42,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center overflow-x-hidden">
           {/* Left section: text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -75,7 +75,7 @@ export default function About() {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1a1a1a]  backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer border border-white/40"
+                className="flex items-start space-x-4 bg-gradient-to-br from-[#111215] to-[#1a1a1a]  backdrop-blur-md p-6 rounded-lg hover-lift group cursor-pointer border border-white/10"
               >
                 <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}

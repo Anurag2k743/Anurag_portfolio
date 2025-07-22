@@ -3,30 +3,31 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-white pb-10 border-t border-gray-800 pt-10">
-      <div className="container mx-auto px-4 text-center md:text-left md:flex md:justify-between md:items-start">
-        <div className="mb-8 md:mb-0">
-          <div className="text-2xl font-bold mb-2 gradient-text">Anurag Vashisht</div>
-          <p className="text-gray-400 max-w-md mx-auto md:mx-0">
+    <footer className=" text-white py-16 border-t border-gray-800 ">
+      <div className="container">
+        <div className="mb-8 md:mb-0 flex flex-col items-center  text-center">
+          <h3 className="text-6xl font-semibold mb-7 ">Anurag Vashisht</h3>
+          <p className="text-white text-lg ">
             Frontend Developer passionate about creating amazing web experiences
           </p>
         </div>
 
-        <div className="flex flex-col items-center md:items-end gap-6">
-          <nav className="flex flex-col gap-2 text-sm md:text-base">
-            <Link href="#home" className="text-gray-400 hover:text-orange-500 hover:underline transition duration-300">
+       <div className="flex flex-col items-center  gap-6">
+          <nav className="space-x-6  py-6">
+            <Link href="#home" className="text-white hover:text-orange-500 hover:underline transition duration-300">
               Home
             </Link>
-            <Link href="#about" className="text-gray-400 hover:text-orange-500 transition duration-300 hover:underline">
+            <Link href="#about" className="text-white hover:text-orange-500 transition duration-300 hover:underline">
               About
             </Link>
-            <Link href="#projects" className="text-gray-400 hover:text-orange-500 transition duration-300 hover:underline">
+            <Link href="#projects" className="text-white hover:text-orange-500 transition duration-300 hover:underline">
               Projects
             </Link>
-            <Link href="#contact" className="text-gray-400 hover:text-orange-500 transition duration-300 hover:underline">
+            <Link href="#contact" className="text-white hover:text-orange-500 transition duration-300 hover:underline">
               Contact
             </Link>
           </nav>
+
           <div className="flex justify-center space-x-6">
             <a href="https://github.com/Anurag2k743" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <Github
@@ -53,6 +54,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
+         
       </div>
     </footer>
   )
