@@ -54,7 +54,7 @@ export function Banner() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:anurag@example.com"
+                href="anurag:vashishtanurag743@example.com"
                 className="w-12 h-12 bg-[#1a1a1a] text-orange-500 hover:text-orange-600 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
               >
                 <Mail size={20} />
