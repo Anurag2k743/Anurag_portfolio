@@ -1,5 +1,3 @@
-
-
 import { Instagram, Send, PhoneIcon as Whatsapp } from "lucide-react"
 
 export default function AboutUsSection() {
@@ -21,11 +19,11 @@ export default function AboutUsSection() {
 
             <p className="text-gray-300 text-base sm:text-lg mb-4">
               As a frontend developer, I specialize in creating responsive and interactive web applications. My journey began with
-              HTML and CSS, and I've evolved to master modern frameworks like React.js and Next.js. Over the years, I’ve built
+              HTML and CSS, and I have evolved to master modern frameworks like React.js and Next.js. Over the years, I have built
               a wide range of user-centric interfaces—from simple landing pages to full-scale web platforms.
             </p>
             <p className="text-gray-300 text-base sm:text-lg mb-4">
-              I'm passionate about writing clean, efficient code and staying up-to-date with the latest web development trends
+              I am passionate about writing clean, efficient code and staying up-to-date with the latest web development trends
               and best practices. I focus on performance optimization, accessibility, and maintainable code structures, ensuring that
               every project I work on is both user-friendly and developer-friendly.
             </p>
@@ -35,9 +33,9 @@ export default function AboutUsSection() {
               high-level ideas into functional, beautiful digital experiences.
             </p>
             <p className="text-gray-300 text-base sm:text-lg">
-              When & m not coding, I love exploring new technologies, contributing to open-source projects, and sharing
-              knowledge with the developer community through blogs, tutorials, or developer meetups. I'm a strong believer in
-              lifelong learning and always looking for ways to grow both professionally and personally.
+              When I am not coding, I love exploring new technologies, contributing to open-source projects, and sharing
+              knowledge with the developer community through blogs, tutorials, or developer meetups. I strongly believe in
+              lifelong learning and always look for ways to grow both professionally and personally.
             </p>
           </div>
 
