@@ -1,5 +1,6 @@
 import { ArrowRightIcon, Github, Linkedin, Mail } from "lucide-react";
 import Animation from "./Animation";
+import BannerAnimation from "./BannerAnimation";
 
 export function Banner() {
   return (
@@ -11,7 +12,7 @@ export function Banner() {
       </div>
 
       <div className="container">
-        <div className="grid grid-cols-1 relative z-60">  
+        <div className="grid grid-cols-2 relative z-60">  
           <div className="flex flex-col items-center md:items-start text-center md:text-left mt-10">
             <p className="text-sm font-medium uppercase tracking-widest text-[#7f45ee]">
               Frontend Developer
@@ -60,6 +61,10 @@ export function Banner() {
                 <Mail size={20} />
               </a>
             </div>
+          </div>
+
+          <div className="flex justify-center items-center">
+              <BannerAnimation/>
           </div>
         </div>
       </div>
