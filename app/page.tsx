@@ -3,6 +3,7 @@ import { Banner } from "./Components/Banner";
 import Contact from "./Components/Contact";
 import Copyright from "./Components/Copyright";
 import Footer from "./Components/Footer";
+import FooterSection from "./Components/FooterSection";
 import { Header } from "./Components/Navbar";
 import Projects from "./Components/Project";
 import Skills from "./Components/Skills";
@@ -18,11 +19,10 @@ export default function Home() {
         <Banner/>
         <SkillsSlider/>
         <AboutUsSection/>
-        <Skills/>
+]        <Skills/>
         <Projects />
         <Contact/>
-        <Footer/>
-        <Copyright />
+        <FooterSection/>
       </div>
     </>
 

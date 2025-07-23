@@ -43,7 +43,7 @@ export function Header() {
 
   const navLinkClass = (id: string) =>
     `text-md  transition-colors ${
-      activeSection === id ? "text-[#7f45ee] underline font-semibold text-md" : "text-white  underline-hide text-md  "
+      activeSection === id ? "text-[#7f45ee] underline font-semibold text-md " : "text-white  underline-hide text-md hover:text-[#7f45ee] "
     }`;
 
   return (
@@ -62,7 +62,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="#contact"
-            className="flex items-center gap-2 rounded-full px-5 py-2 text-white bg-[#1a1a1a] transition-colors ">
+            className="flex items-center gap-2 rounded-full px-5 py-2 text-white bg-[#1a1a1a] hover:bg-[#7f45ee] transition-colors ">
             <span className="text-md">Contact Me</span>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
@@ -79,7 +79,7 @@ export function Header() {
             <Link
               key={id}
               className={`block font-medium ${
-                activeSection === id ? "text-orange-500" : "text-white hover:text-orange-500"
+                activeSection === id ? "text-[#7f45ee]" : "text-[#7f45ee] hover:text-[#7f45ee] "
               }`}
               href={`#${id}`}
               onClick={toggleMenu}>
@@ -87,10 +87,9 @@ export function Header() {
             </Link>
           ))}
           <Link
-            className="block font-medium hover:text-orange-500"
+            className="block font-medium hover:text-[#7f45ee] "
             href="#contact"
-            onClick={toggleMenu}
-          >
+            onClick={toggleMenu}>
             Contact
           </Link>
         </div>
