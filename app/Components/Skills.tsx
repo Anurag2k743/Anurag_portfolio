@@ -60,11 +60,10 @@ export default function Skills() {
   //  JSX
   // ---------------------------------------------------------------------------
   return (
-    <section id="skills" className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
-      <div className="max-w-7xl mx-auto" ref={sectionRef}>
-        {/* Section Heading */}
+    <section id="skills" className="pt-10 md:pt-20 scroll-mt-20">
+      <div className="container" ref={sectionRef}>
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#7f45ee] mb-4">Skills &amp; Expertise</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  mb-4">Skills &amp; <span className="text-[#7f45ee]">Expertise</span> </h2>
           <p className="text-gray-300 max-w-xl mx-auto text-sm sm:text-base">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>

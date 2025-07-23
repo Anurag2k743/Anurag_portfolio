@@ -13,7 +13,7 @@ export function Banner() {
       <div className="container">
         <div className="grid grid-cols-1 relative z-60">  
           <div className="flex flex-col items-center md:items-start text-center md:text-left mt-10">
-            <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
+            <p className="text-sm font-medium uppercase tracking-widest text-[#7f45ee]">
               Frontend Developer
             </p>
             <h1 className="mt-4 text-3xl font-bold leading-tight text-white md:text-6xl lg:text-7xl ">

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className=" text-white py-16 border-t border-gray-800 ">
+    <footer className=" text-white py-16 border-t border-[#1a1a1a] ">
       <div className="container">
         <div className="mb-8 md:mb-0 flex flex-col items-center  text-center">
           <h3 className="text-6xl font-semibold mb-7 ">Anurag Vashisht</h3>

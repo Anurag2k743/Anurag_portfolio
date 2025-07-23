@@ -35,7 +35,7 @@ export default function Contact() {
     <section id="contact" className="py-10 md:py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get  <span className="text-[#7f45ee] font-bold">In Touch</span></h2>
           <p className="text-white max-w-2xl mx-auto text-lg">
             I&apos;m always open to discussing new opportunities and interesting projects
           </p>

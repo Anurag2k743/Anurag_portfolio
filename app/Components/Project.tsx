@@ -60,8 +60,8 @@ export default function Projects() {
     <section id="projects" className="pt-10 md:pt-20 scroll-mt-30">
       <div className="container">
         <div className="text-center md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#7f45ee]">
-            Featured Projects
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ">
+            Featured <span className="text-[#7f45ee]">Projects</span> 
           </h2>
           <p className="text-white max-w-2xl mx-auto text-lg">
             Here are some of my recent projects that showcase my skills and experience
