@@ -1,4 +1,3 @@
-import About from "./Components/About";
 import AboutUsSection from "./Components/AboutUsSection";
 import { Banner } from "./Components/Banner";
 import Contact from "./Components/Contact";
@@ -18,7 +17,6 @@ export default function Home() {
         <Header />
         <Banner/>
         <SkillsSlider/>
-        {/* <About/> */}
         <AboutUsSection/>
         <Skills/>
         <Projects />
