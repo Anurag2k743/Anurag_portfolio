@@ -1,4 +1,4 @@
-import { ArrowRight, Instagram, Send, PhoneIcon as Whatsapp } from "lucide-react"
+import { Instagram, Send, PhoneIcon as Whatsapp } from "lucide-react"
 
 export default function AboutUsSection() {
   return (
