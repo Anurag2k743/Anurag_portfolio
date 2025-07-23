@@ -8,6 +8,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   })
 
@@ -18,7 +19,7 @@ export default function Contact() {
     setIsSubmitting(true)
     await new Promise((resolve) => setTimeout(resolve, 2000))
     console.log("Form submitted:", formData)
-    setFormData({ name: "", email: "", message: "" })
+    setFormData({ name: "", email: "", phone: "", message: ""  })
     setIsSubmitting(false)
   }
 
@@ -33,18 +34,17 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-10 md:py-20 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get  <span className="text-[#7f45ee] font-bold">In Touch</span></h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ">Get  <span className="text-[#7f45ee] font-bold">In Touch</span></h2>
           <p className="text-white max-w-2xl mx-auto text-lg">
             I&apos;m always open to discussing new opportunities and interesting projects
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* LEFT PANEL */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Let&apos;s Connect</h3>
             <p className="text-white mb-8 text-lg">
               Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.
             </p>
@@ -118,6 +118,22 @@ export default function Contact() {
                   required
                   className="w-full px-4 py-3 border border-white/10 rounded-lg "
                   placeholder="your.email@example.com"
+                />
+              </div>
+
+                <div className="group">
+                <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+                  Number
+                </label>
+                <input
+                  type="phone"
+                  id="phone"
+                  name="number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-white/10 rounded-lg "
+                  placeholder="your contact number"
                 />
               </div>
 
