@@ -1,4 +1,5 @@
 import About from "./Components/About";
+import AboutUsSection from "./Components/AboutUsSection";
 import { Banner } from "./Components/Banner";
 import Contact from "./Components/Contact";
 import Copyright from "./Components/Copyright";
@@ -17,7 +18,8 @@ export default function Home() {
         <Header />
         <Banner/>
         <SkillsSlider/>
-        <About/>
+        {/* <About/> */}
+        <AboutUsSection/>
         <Skills/>
         <Projects />
         <Contact/>

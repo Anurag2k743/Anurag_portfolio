@@ -60,7 +60,7 @@ export default function Projects() {
     <section id="projects" className="pt-10 md:pt-20 scroll-mt-30">
       <div className="container">
         <div className="text-center md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#7f45ee]">
             Featured Projects
           </h2>
           <p className="text-white max-w-2xl mx-auto text-lg">
@@ -106,7 +106,7 @@ export default function Projects() {
               <div className="flex space-x-4">
                 <a
                   href={project.liveUrl}
-                  className="flex items-center gap-2 text-purple-500 hover:text-purple-800 transition-all duration-300 hover:scale-105 group/link"
+                  className="flex items-center gap-2 text-[#7f45ee]  transition-all duration-300 hover:scale-105 group/link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

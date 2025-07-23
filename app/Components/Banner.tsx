@@ -3,7 +3,7 @@ import Animation from "./Animation";
 
 export function Banner() {
   return (
-<section className="relative z-30  h-[calc(100vh-4rem)] md:h-[calc(100vh-2rem)] flex items-center justify-center md:px-8" id="home">
+<section className="relative z-30  h-[calc(100vh-4rem)] md:h-[calc(100vh-2rem)] flex items-center justify-center" id="home">
      
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-30 h-full w-full"></div>
       <div className="flex justify-center absolute top-0 right-0 w-full h-full -z-1">
@@ -12,7 +12,7 @@ export function Banner() {
 
       <div className="container">
         <div className="grid grid-cols-1 relative z-60">  
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left mt-10">
             <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
               Frontend Developer
             </p>
@@ -24,11 +24,11 @@ export function Banner() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center gap-2 rounded-full bg-[#1a1a1a] text-white  transition-colors px-5 py-2 text-md hover:bg-gradient-to-r from-purple-600 to-blue-500">
+              <button className="flex items-center gap-2 rounded-full bg-[#1a1a1a] text-white  transition-colors px-5 py-2 text-md hover:bg-[#7f45ee]">
                 Download Resume
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
-              <button className="flex items-center gap-2 rounded-full text-md  text-white  transition-colors px-5 py-2 bg-gradient-to-r from-purple-600 to-blue-500 ">
+              <button className="flex items-center gap-2 rounded-full text-md  text-white  transition-colors px-5 py-2 bg-[#7f45ee] ">
                 <a href="#contact"> Contact Me</a>
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
@@ -39,7 +39,7 @@ export function Banner() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-[#1a1a1a] text-purple-500 hover:text-purple-600 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center  transition-all duration-300 hover:-translate-y-1"
+                className="w-12 h-12 bg-[#1a1a1a] text-[#7f45ee]  rounded-xl shadow-md hover:shadow-lg flex items-center justify-center  transition-all duration-300 hover:-translate-y-1"
               >
                 <Github size={20} />
               </a>
@@ -49,13 +49,13 @@ export function Banner() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-[#1a1a1a] text-purple-500 hover:text-purple-600 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center  transition-all duration-300 hover:-translate-y-1"
+                className="w-12 h-12 bg-[#1a1a1a] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center  transition-all duration-300 hover:-translate-y-1"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="anurag:vashishtanurag743@example.com"
-                className="w-12 h-12 bg-[#1a1a1a] text-purple-500 hover:text-purple-600 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+                className="w-12 h-12 bg-[#1a1a1a] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
               >
                 <Mail size={20} />
               </a>

@@ -43,7 +43,7 @@ export function Header() {
 
   const navLinkClass = (id: string) =>
     `text-md  transition-colors ${
-      activeSection === id ? "bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent underline font-semibold text-md" : "text-white  underline-hide text-md  "
+      activeSection === id ? "text-[#7f45ee] underline font-semibold text-md" : "text-white  underline-hide text-md  "
     }`;
 
   return (
@@ -62,7 +62,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="#contact"
-            className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-white bg-gradient-to-r from-purple-600 to-blue-500 transition-colors ">
+            className="flex items-center gap-2 rounded-full px-5 py-2 text-white bg-[#1a1a1a] transition-colors ">
             <span className="text-md">Contact Me</span>
             <ArrowRightIcon className="h-4 w-4" />
           </Link>

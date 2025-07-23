@@ -12,12 +12,12 @@ export default function About() {
 
   const highlights = [
     {
-      icon: <Code className="w-8 h-8 text-orange-500" />,
+      icon: <Code className="w-8 h-8 text-[#BE1E2D]" />,
       title: "Clean Code",
       description: "Writing maintainable, scalable, and well-documented code following best practices.",
     },
     {
-      icon: <Palette className="w-8 h-8 text-purple-500" />,
+      icon: <Palette className="w-8 h-8 text-[#7f45ee]" />,
       title: "UI/UX Focus",
       description: "Creating beautiful and intuitive user interfaces with attention to detail.",
     },
@@ -36,7 +36,7 @@ export default function About() {
       className="pt-10 md:pt-20  text-white scroll-mt-20" >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8  md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#7f45ee]">About Me</h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
             I&apos;m a passionate frontend developer with expertise in modern web technologies
           </p>

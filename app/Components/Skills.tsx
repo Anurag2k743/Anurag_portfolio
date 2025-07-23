@@ -1,8 +1,11 @@
-"use client";
+"use client"
 
-import { useRef, useEffect } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef, useEffect } from "react"
+import { motion, useAnimation, useInView } from "framer-motion"
 
+// -----------------------------------------------------------------------------
+//  Skills component
+// -----------------------------------------------------------------------------
 export default function Skills() {
   const skillCategories = [
     {
@@ -35,52 +38,49 @@ export default function Skills() {
         { name: "Postman", level: 75 },
       ],
     },
-  ];
+  ]
 
-  const ref = useRef(null);
-  const inView = useInView(ref, { margin: "0px 0px -20% 0px" });
-  const controls = useAnimation();
+  // ---------------------------------------------------------------------------
+  //  Framer-motion setup
+  // ---------------------------------------------------------------------------
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(sectionRef, { margin: "0px 0px -20% 0px" })
+  const controls = useAnimation()
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView, controls]);
+    controls.start(inView ? "visible" : "hidden")
+  }, [inView, controls])
 
   const barVariants = (level: number) => ({
     hidden: { width: 0 },
     visible: { width: `${level}%` },
-  });
+  })
 
+  // ---------------------------------------------------------------------------
+  //  JSX
+  // ---------------------------------------------------------------------------
   return (
-    <section id="skills" className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20" >
-      <div className="max-w-7xl mx-auto" ref={ref}>
+    <section id="skills" className="pt-10 md:pt-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
+      <div className="max-w-7xl mx-auto" ref={sectionRef}>
+        {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-            Skills & Expertise
-          </h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#7f45ee] mb-4">Skills &amp; Expertise</h2>
           <p className="text-gray-300 max-w-xl mx-auto text-sm sm:text-base">
-            Here are the technologies and tools I work with to bring ideas to
-            life
+            Here are the technologies and tools I work with to bring ideas to life.
           </p>
         </div>
 
+        {/* Skill Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="relative group rounded-xl overflow-hidden transition-all duration-300" >
-              {/* Animated gradient border */}
-              <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-r from-purple-600 to-blue-500  opacity-0 group-hover:opacity-100 transition duration-500 blur-lg" />
-              <div className="relative z-10 m-[2px] rounded-[calc(0.75rem-1px)] border border-white/10 bg-gradient-to-br from-[#111215] to-[#1a1a1a] p-6 shadow-inner backdrop-blur-xl">
-                <div className="absolute inset-0 rounded-xl pointer-events-none bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.05),_transparent_70%)]" />
+            <div key={categoryIndex} className="relative rounded-xl overflow-hidden group p-[1px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF69B4] opacity-0 group-hover:opacity-70 transition-opacity duration-300 rounded-xl"></div>
 
-                <h3 className="relative text-lg sm:text-xl font-semibold text-white mb-5 text-center z-10">
-                  {category.title}
-                </h3>
-                <div className="relative space-y-4 z-10">
+              <div className="relative z-10 rounded-[calc(0.75rem-1px)] bg-gradient-to-br from-[#111215] to-[#1a1a1a] border border-white/10 p-6 shadow-inner backdrop-blur-xl">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-5 text-center">{category.title}</h3>
+
+                {/* Skill bars */}
+                <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
                       <div className="flex justify-between mb-1 text-sm sm:text-base text-white">
@@ -89,7 +89,10 @@ export default function Skills() {
                       </div>
                       <div className="w-full bg-gray-700/30 rounded-full h-2">
                         <motion.div
-                          className="bg-gradient-to-r from-purple-600 to-blue-500  h-2 rounded-full"
+                          className="h-2 rounded-full"
+                          style={{
+                            background: "linear-gradient(to right, #8A2BE2, #FF69B4)",
+                          }}
                           variants={barVariants(skill.level)}
                           initial="hidden"
                           animate={controls}
@@ -97,7 +100,7 @@ export default function Skills() {
                             duration: 1,
                             delay: skillIndex * 0.1,
                           }}
-                        ></motion.div>
+                        />
                       </div>
                     </div>
                   ))}
@@ -108,5 +111,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  );
+  )
 }

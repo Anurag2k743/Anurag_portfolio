@@ -32,7 +32,7 @@ const content = [
  
 export default function SkillsSlider() {
     return (
-        <div className="overflow-hidden whitespace-nowrap bg-[#1a1a1a] text-white  px-20 py-4">
+        <div className="overflow-hidden whitespace-nowrap bg-[#1a1a1a] text-white  px-20 py-5">
             <motion.div
                 className="flex text-2xl font-medium uppercase"
                 animate={{ x: ["0%", "-100%"] }}
