@@ -19,7 +19,7 @@ export function Banner() {
             <h1 className="mt-4 text-3xl font-bold leading-tight text-white md:text-6xl lg:text-7xl ">
               Anurag Vashisht
             </h1>
-            <p className="mt-6 text-md md:text-lg w-full md:max-w-lg text-[#ADADAD]">
+            <p className="mt-6 text-md md:text-lg w-full md:max-w-lg text-[#E6E5E5]">
               {"Hello! I'm Anurag Vashisht, a passionate Frontend Developer with expertise in building modern and responsive web applications. I specialize in creating engaging user experiences using cutting-edge technologies."}
             </p>
 

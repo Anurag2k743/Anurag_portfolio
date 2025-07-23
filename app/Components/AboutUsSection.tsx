@@ -15,9 +15,9 @@ export default function AboutUsSection() {
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
               Know Me <span className="text-[#7f45ee]">Better</span>
-            </h2>
+            </h2> 
 
-            <p className="text-gray-300 text-base sm:text-lg mb-4">
+            <p className="text-gray-300 text-base sm:text-lg mb-4 ">
               As a frontend developer, I specialize in creating responsive and interactive web applications. My journey began with
               HTML and CSS, and I have evolved to master modern frameworks like React.js and Next.js. Over the years, I have built
               a wide range of user-centric interfaces—from simple landing pages to full-scale web platforms.

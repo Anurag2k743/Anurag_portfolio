@@ -64,7 +64,7 @@ export default function Skills() {
       <div className="container" ref={sectionRef}>
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  mb-4">Skills &amp; <span className="text-[#7f45ee]">Expertise</span> </h2>
-          <p className="text-gray-300 max-w-xl mx-auto text-sm sm:text-base">
+          <p className="text-gray-300 max-w-xl mx-auto text-lg">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
         </div>
