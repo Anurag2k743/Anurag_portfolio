@@ -37,27 +37,9 @@ export default function FooterSection() {
 
   return (
     <footer className="text-white relative bg-[#1a1a1a] pt-16">
-      <button
-        className="fixed bottom-8 right-8 bg-white hover:bg-[#7f45ee] hover:text-white text-black rounded-full p-3 shadow-lg z-50 w-12 h-12 flex items-center justify-center"
-        onClick={() => {
-          if (typeof window !== "undefined") {
-            window.scrollTo({ top: 0, behavior: "smooth" })
-          }
-        }}
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="h-6 w-6" />
-      </button>
 
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            HAVE ANY PROJECTS IN MIND?
-          </h2>
-          <p className="text-4xl md:text-6xl font-bold">
-            GET IN <span className="text-[#7f45ee]">TOUCH</span>
-          </p>
-        </div>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16 md:mb-16">
           <div>

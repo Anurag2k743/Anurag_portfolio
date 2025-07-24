@@ -58,7 +58,7 @@ export default function Skills() {
 
 
   return (
-    <section id="skills" className="pt-10 md:pt-20 scroll-mt-20">
+    <section id="skills" className="pt-10 md:pt-20 h-screen scroll-mt-20" >
       <div className="container" ref={sectionRef}>
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  mb-4">Skills &amp; <span className="text-[#7f45ee]">Expertise</span> </h2>

@@ -57,7 +57,7 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="pt-10 md:pt-20 scroll-mt-30">
+    <section id="projects" className="pt-10 md:pt-20 h-screen scroll-mt-30">
       <div className="container">
         <div className="text-center md:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ">
