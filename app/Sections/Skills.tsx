@@ -56,9 +56,7 @@ export default function Skills() {
     visible: { width: `${level}%` },
   })
 
-  // ---------------------------------------------------------------------------
-  //  JSX
-  // ---------------------------------------------------------------------------
+
   return (
     <section id="skills" className="pt-10 md:pt-20 scroll-mt-20">
       <div className="container" ref={sectionRef}>
@@ -76,13 +74,13 @@ export default function Skills() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF69B4] opacity-0 group-hover:opacity-70 transition-opacity duration-300 rounded-xl"></div>
 
               <div className="relative z-10 rounded-[calc(0.75rem-1px)] bg-gradient-to-br from-[#111215] to-[#1a1a1a] border border-white/10 p-6 shadow-inner backdrop-blur-xl">
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-5 text-center">{category.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold  mb-5 text-center">{category.title}</h3>
 
                 {/* Skill bars */}
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex justify-between mb-1 text-sm sm:text-base text-white">
+                      <div className="flex justify-between mb-1 text-sm sm:text-base ">
                         <span>{skill.name}</span>
                         <span>{skill.level}%</span>
                       </div>
