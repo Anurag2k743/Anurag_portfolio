@@ -13,7 +13,6 @@ import {
 } from "react-icons/si";
 import { MdPsychology } from "react-icons/md";
 import { ReactElement } from "react";
-import { div } from "framer-motion/client";
 
 // Define allowed skill names
 type Skill =
@@ -62,26 +61,26 @@ const skillIcons: Record<Skill, ReactElement> = {
 
 export default function SkillsSlider() {
     return (
-<div className="bg-gradient-to-r from-black via-[#1a1a1a] to-black bg-fixed text-white px-4 sm:px-10 py-4 w-full">
-            <div className="max-w-8xl mx-auto overflow-hidden whitespace-nowrap ">
-                    <motion.div
-                        className="flex text-sm sm:text-base md:text-2xl font-medium uppercase"
-                        animate={{ x: ["0%", "-100%"] }}
-                        transition={{
-                            repeat: Infinity,
-                            duration: 40,
-                            ease: "linear",
-                        }}
-                    >
-                        <div className="flex gap-6 sm:gap-10 py-2">
-                            {content.map((item, index) => (
-                                <div key={index} className="flex items-center gap-2 min-w-fit">
-                                    {skillIcons[item]}
-                                    <span>{item}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
+        <div className="bg-gradient-to-r from-black via-[#1a1a1a] to-black bg-fixed text-white px-4 sm:px-10 py-4 w-full">
+            <div className="max-w-8xl mx-auto overflow-hidden whitespace-nowrap">
+                <motion.div
+                    className="flex text-sm sm:text-base md:text-2xl font-medium uppercase"
+                    animate={{ x: ["0%", "-100%"] }}
+                    transition={{
+                        repeat: Infinity,
+                        duration: 40,
+                        ease: "linear",
+                    }}
+                >
+                    <div className="flex gap-6 sm:gap-10 py-2">
+                        {content.map((item, index) => (
+                            <div key={index} className="flex items-center gap-2 min-w-fit">
+                                {skillIcons[item]}
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </div>
     );
