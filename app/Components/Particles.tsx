@@ -227,6 +227,7 @@ const Particles: React.FC<ParticlesProps> = ({
     particleCount,
     particleSpread,
     speed,
+    particleColors, // ✅ Added to fix the warning
     moveParticlesOnHover,
     particleHoverFactor,
     alphaParticles,
