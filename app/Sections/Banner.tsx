@@ -1,7 +1,6 @@
 "use client";
 import { ArrowRightIcon, Github, Linkedin, Mail } from "lucide-react";
 import Particles from "../Components/Particles";
-import { section } from "framer-motion/client";
 
 export function Banner() {
   return (
@@ -18,6 +17,7 @@ export function Banner() {
       backgroundRepeat: "no-repeat",
       backgroundAttachment: "fixed",
     }} id="home">
+      
       <Particles
         particleColors={['#ffffff', '#ffffff']}
         particleCount={200}
@@ -70,7 +70,7 @@ export function Banner() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1a1a1a] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
             >
               <Github size={20} />
             </a>
@@ -79,14 +79,14 @@ export function Banner() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1a1a1a] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
             >
               <Linkedin size={20} />
             </a>
 
             <a
               href="anurag:vashishtanurag743@example.com"
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-[#1a1a1a] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
             >
               <Mail size={20} />
             </a>

@@ -17,7 +17,7 @@ export default function Home() {
         <Banner/>
         <SkillsSlider/>
         <About/>
-]        <Skills/>
+       <Skills/>
         <Projects />
         <Contact/>
         <FooterSection/>

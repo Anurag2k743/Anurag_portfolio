@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { Send, Facebook, Twitter, Instagram, Youtube, Globe, ArrowUp } from "lucide-react"
+import { Send, Facebook, Twitter, Instagram, Youtube, Globe } from "lucide-react"
 import { useState } from "react"
 
 export default function FooterSection() {
@@ -27,19 +27,12 @@ export default function FooterSection() {
     email: "vashishtanurag743@gmail.com",
   }
 
-  const socialLinks = [
-    { icon: Facebook, label: "Facebook", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Instagram, label: "Instagram", href: "#" },
-    { icon: Globe, label: "Website", href: "#" },
-    { icon: Youtube, label: "Youtube", href: "#" },
-  ]
-
+ 
   return (
     <footer className="text-white relative bg-[#1a1a1a] pt-16">
 
       <div className="container mx-auto px-4 md:px-6">
-        
+
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16 md:mb-16">
           <div>
@@ -47,15 +40,7 @@ export default function FooterSection() {
             <p className="text-sm text-gray-300 mb-4">
               Frontend Developer passionate about creating amazing web experiences
             </p>
-            <ul className="space-y-2 text-sm">
-              {navLinks.map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#7f45ee]">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+
           </div>
 
           <div>
@@ -100,10 +85,22 @@ export default function FooterSection() {
 
       <div className="py-6 border-t border-gray-800">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-center text-sm text-gray-400">
+          <div className="flex justify-between items-center text-sm text-gray-400">
+
+            <ul className="flex space-x-2 text-sm">
+              {navLinks.map((link, idx) => (
+                <li key={idx}>
+                  <Link href={link.href} className="hover:text-[#7f45ee]">
+                    {link.name} /
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
             <p className="mb-4 md:mb-0">
               Anurag Vashisht Frontend Developer passionate about creating amazing web experiences
             </p>
+
           </div>
         </div>
       </div>

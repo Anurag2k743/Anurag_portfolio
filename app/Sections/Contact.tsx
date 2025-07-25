@@ -33,7 +33,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-10 md:py-20 h-screen scroll-mt-20">
+    <section id="contact" className="py-10 md:py-16 scroll-mt-20">
       <div className="container">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ">Get  <span className="text-[#7f45ee] font-bold">In Touch</span></h2>
