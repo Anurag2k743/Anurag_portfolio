@@ -63,8 +63,7 @@ const skillIcons: Record<Skill, ReactElement> = {
 export default function SkillsSlider() {
     return (
 <div className="bg-gradient-to-r from-black via-[#1a1a1a] to-black bg-fixed text-white px-4 sm:px-10 py-4 w-full">
-            <div className="max-w-8xl mx-auto">
-                <div className="overflow-hidden whitespace-nowrap ">
+            <div className="max-w-8xl mx-auto overflow-hidden whitespace-nowrap ">
                     <motion.div
                         className="flex text-sm sm:text-base md:text-2xl font-medium uppercase"
                         animate={{ x: ["0%", "-100%"] }}
@@ -83,7 +82,6 @@ export default function SkillsSlider() {
                             ))}
                         </div>
                     </motion.div>
-                </div>
             </div>
         </div>
     );
