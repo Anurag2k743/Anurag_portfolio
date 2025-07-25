@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { Send, Facebook, Twitter, Instagram, Youtube, Globe } from "lucide-react"
+import { Send} from "lucide-react"
 import { useState } from "react"
 
 export default function FooterSection() {
