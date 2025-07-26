@@ -5,7 +5,7 @@ import Particles from "../Components/Particles";
 export function Banner() {
   return (
     <div
-      className="w-full h-[600px] md:h-[930px] relative"
+      className="w-full h-[600px] md:h-[860px] relative"
       style={{
         background: `
           radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%),

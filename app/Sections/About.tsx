@@ -2,7 +2,7 @@ import { Instagram, Send, PhoneIcon as Whatsapp } from "lucide-react"
 
 export default function AboutUsSection() {
   return (
-    <div className="pt-16  scroll-mt-20" id="about" >
+    <div className="pt-16  scroll-mt-20 h-screen flex justify-center items-center" id="about" >
       <div className="container">
         <section className="relative py-16 sm:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden bg-black text-white snap-start ">
           
