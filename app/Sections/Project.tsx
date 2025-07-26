@@ -5,7 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/free-mode"
 import "swiper/css/pagination"
-import { Autoplay, FreeMode, Pagination } from "swiper/modules"
+import "swiper/css/navigation"
+import "swiper/css/navigation"
+
+import { FreeMode, Pagination, Navigation } from "swiper/modules"
 
 import Image from "next/image"
 import { Github, ExternalLink } from "lucide-react"
@@ -29,7 +32,7 @@ const projects = [
     liveUrl: "https://vision-kappa-ten.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/Vision",
   },
- {
+  {
     title: "Netflix Clone",
     description:
       "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
@@ -47,7 +50,7 @@ const projects = [
     liveUrl: "https://vision-kappa-ten.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/Vision",
   },
- {
+  {
     title: "Netflix Clone",
     description:
       "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
@@ -65,32 +68,11 @@ const projects = [
     liveUrl: "https://vision-kappa-ten.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/Vision",
   },
- {
-    title: "Netflix Clone",
-    description:
-      "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
-    image: "/netflix.png",
-    technologies: ["React", "Tailwind CSS"],
-    liveUrl: "https://netflix-pied-delta-80.vercel.app",
-    githubUrl: "https://github.com/Anurag2k743/Netflix",
-  },
-  {
-    title: "Vision UI",
-    description:
-      "A sleek and elegant user interface design system built with React and Tailwind CSS, tailored for dashboards and admin panels.",
-    image: "/vision.png",
-    technologies: ["React", "Tailwind CSS"],
-    liveUrl: "https://vision-kappa-ten.vercel.app/",
-    githubUrl: "https://github.com/Anurag2k743/Vision",
-  },
-
-
-
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="pt-16 md:pt-20 scroll-mt-20 ">
+    <section id="projects" className="pt-16 md:pt-20 scroll-mt-20">
       <div className="container">
         <div className="text-center md:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
@@ -101,28 +83,24 @@ export default function Projects() {
           </p>
         </div>
 
-     <Swiper
-  slidesPerView={1}
-  spaceBetween={20}
-  breakpoints={{
-    640: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  }}
-  freeMode={true}
-  pagination={{ clickable: true }}
-  autoplay={{
-    delay: 3000,
-    disableOnInteraction: false,
-  }}
-  loop={true} // ✅ ADD THIS LINE
-  modules={[FreeMode, Pagination, Autoplay]}
-  className="mySwiper pb-10"
->
-
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          freeMode={true}
+          pagination={{ clickable: true }}
+          navigation={true}
+          loop={false}
+          modules={[FreeMode, Pagination, Navigation]}
+          className="mySwiper pb-10"
+        >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-[#1a1a1a] rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 h-full flex flex-col justify-between">
+              <div className="bg-[#1a1a1a] rounded-lg shadow-lg p-4 h-full flex flex-col justify-between">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -138,8 +116,7 @@ export default function Projects() {
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-white text-black text-xs rounded"
-                    >
+                      className="px-3 py-1 bg-white text-black text-xs rounded">
                       {tech}
                     </span>
                   ))}
@@ -149,7 +126,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#7f45ee] flex items-center gap-1 hover:scale-105 transition-transform"
+                    className="text-[#7f45ee] flex items-center gap-1"
                   >
                     <ExternalLink size={16} /> Live Demo
                   </a>
@@ -157,7 +134,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white flex items-center gap-1 hover:scale-105 transition-transform"
+                    className="text-white flex items-center gap-1"
                   >
                     <Github size={16} /> GitHub
                   </a>
@@ -166,25 +143,46 @@ export default function Projects() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
 
-      <style jsx global>{`
-        .swiper-pagination {
-          text-align: center;
-          margin-top: 20px;
-          position: relative !important;
-          bottom: 0 !important;
-        }
-        .swiper-pagination-bullet {
-          background: white;
-          opacity: 0.5;
-          margin: 0 6px;
-        }
-        .swiper-pagination-bullet-active {
-          background: #7f45ee;
-          opacity: 1;
-        }
-      `}</style>
+        {/* Arrows Custom Color */}
+        <style jsx global>{`
+          .swiper-button-prev,
+          .swiper-button-next { 
+            color: #7f45ee;
+            top: 50%;
+            transform: translateY(-50%);
+            padding:40px 10px;
+          }
+
+          .swiper-button-prev {
+            left: 10px;
+          }
+
+          .swiper-button-next {
+            right: 10px;
+          }
+
+          .swiper-pagination {
+            text-align: center;
+            margin-top: 20px;
+            position: relative !important;
+            bottom: 0 !important;
+          }
+
+          .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+            margin: 0 6px;
+          }
+
+          .swiper-pagination-bullet-active {
+            background: #7f45ee;
+            opacity: 1;
+          }
+        `}
+        
+        </style>
+      </div>
     </section>
   )
 }
