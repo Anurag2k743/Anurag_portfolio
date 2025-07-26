@@ -5,7 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/free-mode"
 import "swiper/css/pagination"
-import { FreeMode, Pagination } from "swiper/modules"
+import { Autoplay, FreeMode, Pagination } from "swiper/modules"
+
 import Image from "next/image"
 import { Github, ExternalLink } from "lucide-react"
 
@@ -28,38 +29,68 @@ const projects = [
     liveUrl: "https://vision-kappa-ten.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/Vision",
   },
-  {
-    title: "Another Netflix Clone",
+ {
+    title: "Netflix Clone",
     description:
-      "A similar Netflix clone project to demonstrate UI duplication and deployment.",
+      "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
     image: "/netflix.png",
     technologies: ["React", "Tailwind CSS"],
     liveUrl: "https://netflix-pied-delta-80.vercel.app",
     githubUrl: "https://github.com/Anurag2k743/Netflix",
   },
   {
-    title: "Another Netflix Clone",
+    title: "Vision UI",
     description:
-      "A similar Netflix clone project to demonstrate UI duplication and deployment.",
+      "A sleek and elegant user interface design system built with React and Tailwind CSS, tailored for dashboards and admin panels.",
+    image: "/vision.png",
+    technologies: ["React", "Tailwind CSS"],
+    liveUrl: "https://vision-kappa-ten.vercel.app/",
+    githubUrl: "https://github.com/Anurag2k743/Vision",
+  },
+ {
+    title: "Netflix Clone",
+    description:
+      "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
     image: "/netflix.png",
     technologies: ["React", "Tailwind CSS"],
     liveUrl: "https://netflix-pied-delta-80.vercel.app",
     githubUrl: "https://github.com/Anurag2k743/Netflix",
   },
   {
-    title: "Another Netflix Clone",
+    title: "Vision UI",
     description:
-      "A similar Netflix clone project to demonstrate UI duplication and deployment.",
+      "A sleek and elegant user interface design system built with React and Tailwind CSS, tailored for dashboards and admin panels.",
+    image: "/vision.png",
+    technologies: ["React", "Tailwind CSS"],
+    liveUrl: "https://vision-kappa-ten.vercel.app/",
+    githubUrl: "https://github.com/Anurag2k743/Vision",
+  },
+ {
+    title: "Netflix Clone",
+    description:
+      "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
     image: "/netflix.png",
     technologies: ["React", "Tailwind CSS"],
     liveUrl: "https://netflix-pied-delta-80.vercel.app",
     githubUrl: "https://github.com/Anurag2k743/Netflix",
   },
+  {
+    title: "Vision UI",
+    description:
+      "A sleek and elegant user interface design system built with React and Tailwind CSS, tailored for dashboards and admin panels.",
+    image: "/vision.png",
+    technologies: ["React", "Tailwind CSS"],
+    liveUrl: "https://vision-kappa-ten.vercel.app/",
+    githubUrl: "https://github.com/Anurag2k743/Vision",
+  },
+
+
+
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="pt-10 md:pt-16 scroll-mt-20 bg-black">
+    <section id="projects" className="pt-16 md:pt-20 scroll-mt-20 ">
       <div className="container">
         <div className="text-center md:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
@@ -70,19 +101,25 @@ export default function Projects() {
           </p>
         </div>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={20}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          freeMode={true}
-          pagination={{ clickable: true }}
-          modules={[FreeMode, Pagination]}
-          className="mySwiper pb-10" // padding bottom for pagination
-        >
+     <Swiper
+  slidesPerView={1}
+  spaceBetween={20}
+  breakpoints={{
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  }}
+  freeMode={true}
+  pagination={{ clickable: true }}
+  autoplay={{
+    delay: 3000,
+    disableOnInteraction: false,
+  }}
+  loop={true} // ✅ ADD THIS LINE
+  modules={[FreeMode, Pagination, Autoplay]}
+  className="mySwiper pb-10"
+>
+
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
               <div className="bg-[#1a1a1a] rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 h-full flex flex-col justify-between">
@@ -131,7 +168,6 @@ export default function Projects() {
         </Swiper>
       </div>
 
-      {/* Pagination styling */}
       <style jsx global>{`
         .swiper-pagination {
           text-align: center;

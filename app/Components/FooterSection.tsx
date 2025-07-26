@@ -84,25 +84,28 @@ export default function FooterSection() {
       </div>
 
       <div className="py-6 border-t border-gray-800">
-        <div className="container">
-          <div className="flex justify-between items-center text-sm text-gray-400">
+  <div className="container">
+    <div className="flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400 gap-4 text-center md:text-left">
+      
+      {/* Navigation Links */}
+      <ul className="flex flex-wrap justify-center md:justify-start space-x-2">
+        {navLinks.map((link, idx) => (
+          <li key={idx}>
+            <Link href={link.href} className="hover:text-[#7f45ee]">
+              {link.name} /
+            </Link>
+          </li>
+        ))}
+      </ul>
 
-            <ul className="flex space-x-2 text-sm">
-              {navLinks.map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#7f45ee]">
-                    {link.name} /
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      {/* Footer Text */}
+      <p className="max-w-xl">
+        Anurag Vashisht — Frontend Developer passionate about creating amazing web experiences.
+      </p>
+      
+    </div>
+  </div>
 
-            <p className="mb-4 md:mb-0">
-              Anurag Vashisht Frontend Developer passionate about creating amazing web experiences
-            </p>
-
-          </div>
-        </div>
       </div>
     </footer>
   )

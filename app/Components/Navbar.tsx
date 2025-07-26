@@ -63,12 +63,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-2">
             
-            {/* <Link
-              href="#contact"
-              className="flex items-center gap-2 rounded-full px-5 py-3 text-white bg-[#1a1a1a] hover:bg-[#7f45ee] transition-colors">
-              <span className="text-md">Contact Me</span>
-              <ArrowRightIcon className="h-4 w-4" />
-            </Link> */}
+
 
              <button className="relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] font-semibold  text-md pl-5 pr-3 text-white shadow-lg transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 focus:ring-offset-gray-900">
               <a href="#contact">Contact Me</a>
@@ -93,7 +88,7 @@ export function Header() {
               key={id}
               className={`block font-medium ${activeSection === id
                 ? "text-[#7f45ee]"
-                : "text-[#7f45ee] hover:text-[#7f45ee]"
+                : "text-[#ffffff] hover:text-[#7f45ee]"
                 }`}
               href={`#${id}`}
               onClick={toggleMenu}>

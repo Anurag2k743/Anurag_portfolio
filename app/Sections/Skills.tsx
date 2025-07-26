@@ -2,6 +2,9 @@
 import { useRef, useEffect } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 
+// -----------------------------------------------------------------------------
+//  Skills component
+// -----------------------------------------------------------------------------
 export default function Skills() {
   const skillCategories = [
     {
@@ -35,14 +38,16 @@ export default function Skills() {
       ],
     },
   ]
-
+  // ---------------------------------------------------------------------------
+  //  Framer-motion setup
+  // ---------------------------------------------------------------------------
   const sectionRef = useRef<HTMLDivElement>(null)
   const inView = useInView(sectionRef, { margin: "0px 0px -20% 0px" })
   const controls = useAnimation()
 
   useEffect(() => {
     controls.start(inView ? "visible" : "hidden")
-  }, [inView, controls])
+  }, [inView, controls]) // The useEffect hook is used to synchronize the animation with the `inView` state [^2].
 
   const barVariants = (level: number) => ({
     hidden: { width: 0 },
@@ -50,47 +55,37 @@ export default function Skills() {
   })
 
   return (
-    <section
-      id="skills"
-      className="py-16 scroll-mt-20"
-      style={{
-        background: `
-          radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
-          linear-gradient(180deg, #000000 0%, #050505 100%)
-        `,
-        backgroundSize: "100% 100%",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
+    <section id="skills" className=" scroll-mt-20  pt-16 md:pt-20">
       <div className="container" ref={sectionRef}>
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Skills &amp; <span className="text-[#7f45ee]">Expertise</span>
+            Skills &amp; <span className="text-[#7f45ee]">Expertise</span>{" "}
           </h2>
           <p className="text-gray-300 max-w-xl mx-auto text-lg">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
         </div>
-
         {/* Skill Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="relative rounded-xl overflow-hidden p-[1px]">
-              <div className="relative z-10 rounded-[calc(0.75rem-1px)] bg-white/5 backdrop-blur-md border border-white/10 p-6 shadow-inner">
-                <h3 className="text-lg sm:text-xl font-semibold mb-5 text-center">{category.title}</h3>
+            <div key={categoryIndex} className="relative rounded-xl overflow-hidden group p-[1px]">
 
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2] to-[#FF69B4] opacity-0 group-hover:opacity-70 transition-opacity duration-300 rounded-xl"></div>
+
+              <div className="relative z-10 rounded-[calc(0.75rem-1px)] bg-gradient-to-br from-[#111215] to-[#1a1a1a] border border-white/10 p-6 shadow-inner backdrop-blur-sm">
+
+                <h3 className="text-lg sm:text-xl font-semibold mb-5 text-center">{category.title}</h3>
                 {/* Skill bars */}
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex justify-between mb-1 text-sm sm:text-base">
+                      <div className="flex justify-between mb-1 text-sm sm:text-base ">
                         <span>{skill.name}</span>
                         <span>{skill.level}%</span>
                       </div>
                       <div className="w-full bg-gray-700/30 rounded-full h-2">
                         <motion.div
-                          className="h-2 rounded-full relative"
+                          className="h-2 rounded-full relative" // Added relative positioning for the circle
                           style={{
                             background: "linear-gradient(to right, #8A2BE2, #FF69B4)",
                           }}
@@ -102,9 +97,10 @@ export default function Skills() {
                             delay: skillIndex * 0.1,
                           }}
                         >
+                          {/* Small rounded circle at the end of the progress bar */}
                           <div
                             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-4 h-4 rounded-full bg-white border-2"
-                            style={{ borderColor: "#fff" }}
+                            style={{ borderColor: "#" }} // Use the primary color for the border
                           />
                         </motion.div>
                       </div>
