@@ -17,14 +17,24 @@ export default function Contact() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+
+    if (name === "phone") {
+      const numericValue = value.replace(/\D/g, "")
+      setFormData({ ...formData, [name]: numericValue.slice(0, 10) })
+    } else {
+      setFormData({ ...formData, [name]: value })
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (formData.phone.length !== 10) {
+      setStatusMessage({ type: "error", message: "Phone number must be exactly 10 digits." })
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -148,16 +158,22 @@ export default function Contact() {
                 <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                   Number
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-white/10 rounded-lg"
-                  placeholder="your contact number"
-                />
+                <div className="flex items-center gap-2">
+                  <span className="bg-white/10 text-white px-3 py-3 rounded-l-lg border border-white/10">+91</span>
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    inputMode="numeric"
+                    pattern="\d*"
+                    maxLength={10}
+                    required
+                    className="w-full px-4 py-3 border border-white/10 rounded-r-lg"
+                    placeholder="9876543210"
+                  />
+                </div>
               </div>
 
               <div className="group">
