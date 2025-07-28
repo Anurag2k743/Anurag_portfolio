@@ -159,7 +159,7 @@ export default function Contact() {
                   Number
                 </label>
                 <div className="flex items-center gap-2">
-                  <span className="bg-white/10 text-white px-3 py-3 rounded-l-lg border border-white/10">+91</span>
+                  <span className=" text-white px-3 py-3 rounded-l-lg border border-white/10">+91</span>
                   <input
                     type="text"
                     id="phone"
@@ -171,7 +171,7 @@ export default function Contact() {
                     maxLength={10}
                     required
                     className="w-full px-4 py-3 border border-white/10 rounded-r-lg"
-                    placeholder="9876543210"
+                    placeholder="Enter you number"
                   />
                 </div>
               </div>

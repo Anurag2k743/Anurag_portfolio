@@ -33,12 +33,16 @@ p,span,button,li ,a{
 h1,h2,h3{
   font-family: 'Outfit-Regular';
 }
-
-
-
 .particles-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  transition: background-color 9999s ease-in-out 0s;
+  -webkit-text-fill-color: white !important;
+  box-shadow: 0 0 0px 1000px #111215 inset !important; /* match your dark input background */
+}
