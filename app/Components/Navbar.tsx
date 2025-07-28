@@ -50,7 +50,7 @@ export function Header() {
   return (
     <header className="fixed top-8 left-0 right-0 z-50 w-full ">
       <div className="container">
-        <div className="flex items-center justify-between rounded-full border border-white/10 bg-[#1a1a1a]/70  px-6 py-3 backdrop-blur-md">
+        <div className="flex items-center justify-between rounded-full border border-white/10 bg-[#1a1a1a]/70  px-6 py-3 backdrop-blur-xs">
           <Link href="#home">
             <div className="text-xl font-bold text-white cursor-pointer hover:text-[#7f45ee] transition-colors duration-300">
               Portfolio
