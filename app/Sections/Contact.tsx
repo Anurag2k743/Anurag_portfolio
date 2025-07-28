@@ -37,7 +37,7 @@ export default function Contact() {
       <div className="container">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ">Get  <span className="text-[#7f45ee] font-bold">In Touch</span></h2>
-          <p className="text-white max-w-2xl mx-auto text-lg">
+          <p className=" text-[#E6E5E5]/80 max-w-2xl mx-auto text-lg">
             I&apos;m always open to discussing new opportunities and interesting projects
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Let&apos;s Connect</h3>
-            <p className="text-white mb-8 text-lg">
+            <p className=" text-[#E6E5E5]/80 mb-8 text-lg">
               Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.
             </p>
 
@@ -56,7 +56,7 @@ export default function Contact() {
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
                 <Mail className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
-                <span className="text-white group-hover:text-purple-500 transition-colors duration-300">
+                <span className=" text-[#E6E5E5]/80 group-hover:text-purple-500 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </a>
@@ -67,7 +67,7 @@ export default function Contact() {
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
                 <Phone className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
-                <span className="text-white group-hover:text-[#7f45ee] transition-colors duration-300">
+                <span className=" text-[#E6E5E5]/80 group-hover:text-[#7f45ee] transition-colors duration-300">
                   +91 7876212773
                 </span>
               </a>
@@ -79,7 +79,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer">
                 <MapPin className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-[#7f45ee]" />
-                <span className="text-white group-hover:text-[#7f45ee] transition-colors duration-300">
+                <span className=" text-[#E6E5E5]/80 group-hover:text-[#7f45ee] transition-colors duration-300">
                   Dharmshal Himachal Pradesh, India
                 </span>
               </a>

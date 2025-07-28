@@ -40,7 +40,7 @@ export function Banner() {
           <h1 className="mt-4 text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
             Anurag Vashisht
           </h1>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#E6E5E5] w-full sm:max-w-3xl mx-auto">
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#E6E5E5]/80 w-full sm:max-w-3xl mx-auto">
             Hello! I'm Anurag Vashisht, a passionate Frontend Developer with expertise
             in building modern and responsive web applications. I specialize in creating
             engaging user experiences using cutting-edge technologies.

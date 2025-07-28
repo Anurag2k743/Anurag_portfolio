@@ -6,7 +6,6 @@ import "swiper/css"
 import "swiper/css/free-mode"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
-import "swiper/css/navigation"
 
 import { FreeMode, Pagination, Navigation } from "swiper/modules"
 
@@ -78,7 +77,7 @@ export default function Projects() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
             Featured <span className="text-[#7f45ee]">Projects</span>
           </h2>
-          <p className="text-white max-w-2xl mx-auto text-lg mb-8">
+          <p className=" max-w-2xl mx-auto text-lg mb-8  text-[#E6E5E5]/80">
             Here are some of my recent projects that showcase my skills and experience
           </p>
         </div>
@@ -101,22 +100,27 @@ export default function Projects() {
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
               <div className="bg-[#1a1a1a] rounded-lg shadow-lg p-4 h-full flex flex-col justify-between">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  className="rounded-lg mb-4 object-cover w-full"
-                  width={400}
-                  height={250}
-                />
+                {/* ✅ FIXED: Consistent image container */}
+                <div className="w-full h-[200px] mb-4 relative rounded-lg overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+
                 <h3 className="text-white text-xl font-semibold mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                <p className="text-sm mb-3   text-[#E6E5E5]/80">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-white text-black text-xs rounded">
+                      className="px-3 py-1 bg-white text-black text-xs rounded"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -126,7 +130,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#7f45ee] flex items-center gap-1"
+                    className="text-[#ffffff] flex items-center gap-1"
                   >
                     <ExternalLink size={16} /> Live Demo
                   </a>
@@ -144,44 +148,51 @@ export default function Projects() {
           ))}
         </Swiper>
 
-        {/* Arrows Custom Color */}
         <style jsx global>{`
-          .swiper-button-prev,
-          .swiper-button-next { 
-            color: #7f45ee;
-            top: 50%;
-            transform: translateY(-50%);
-            padding:40px 10px;
-          }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #7f45ee;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 60px;
+    font-size: 21px;
+    background-color: rgba(127, 69, 238, 0.1);
+    border-radius: 5px; /* Square background */
+  }
 
-          .swiper-button-prev {
-            left: 10px;
-          }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-          .swiper-button-next {
-            right: 10px;
-          }
+  .swiper-button-prev {
+    left: 5px;
+  }
 
-          .swiper-pagination {
-            text-align: center;
-            margin-top: 20px;
-            position: relative !important;
-            bottom: 0 !important;
-          }
+  .swiper-button-next {
+    right: 5px;
+  }
 
-          .swiper-pagination-bullet {
-            background: white;
-            opacity: 0.5;
-            margin: 0 6px;
-          }
+  .swiper-pagination {
+    text-align: center;
+    margin-top: 20px;
+    position: relative !important;
+    bottom: 0 !important;
+  }
 
-          .swiper-pagination-bullet-active {
-            background: #7f45ee;
-            opacity: 1;
-          }
-        `}
-        
-        </style>
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+    margin: 0 6px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #7f45ee;
+    opacity: 1;
+  }
+`}</style>
       </div>
     </section>
   )

@@ -51,7 +51,11 @@ export function Header() {
     <header className="fixed top-8 left-0 right-0 z-50 w-full ">
       <div className="container">
         <div className="flex items-center justify-between rounded-full border border-white/10 bg-[#1a1a1a]/70  px-6 py-3 backdrop-blur-md">
-          <div className="text-xl font-bold text-white">Anurag Vashisht</div>
+          <Link href="#home">
+            <div className="text-xl font-bold text-white cursor-pointer hover:text-[#7f45ee] transition-colors duration-300">
+              Portfolio
+            </div>
+          </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             {sections.map((id) => (
@@ -62,10 +66,10 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2">
-            
 
 
-             <button className="relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] font-semibold  text-md pl-5 pr-3 text-white shadow-lg transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 focus:ring-offset-gray-900">
+
+            <button className="relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] font-semibold  text-md pl-5 pr-3 text-white shadow-lg transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 focus:ring-offset-gray-900">
               <a href="#contact">Contact Me</a>
               <span className="ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#6D28D9]">
                 <ArrowRightIcon className="h-4 w-4" />
@@ -73,7 +77,7 @@ export function Header() {
             </button>
 
           </div>
-          
+
 
           <button onClick={toggleMenu} className="md:hidden text-white">
             <MdOutlineMenuOpen fontSize={24} />

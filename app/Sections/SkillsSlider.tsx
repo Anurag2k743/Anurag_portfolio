@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from "framer-motion";
+import { motion, useAnimationFrame } from "framer-motion";
 import {
     FaReact,
     FaGithub,
@@ -12,9 +12,8 @@ import {
     SiJavascript,
 } from "react-icons/si";
 import { MdPsychology } from "react-icons/md";
-import { ReactElement } from "react";
+import { ReactElement, useRef } from "react";
 
-// Define allowed skill names
 type Skill =
     | "ReactJS"
     | "Next.js"
@@ -24,7 +23,6 @@ type Skill =
     | "Problem Solving"
     | "Learning Mindset";
 
-// List of skills (repeating for smooth animation)
 const content: Skill[] = [
     "ReactJS",
     "Next.js",
@@ -60,18 +58,24 @@ const skillIcons: Record<Skill, ReactElement> = {
 };
 
 export default function SkillsSlider() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const x = useRef(0);
+    const speed = 0.5; // pixels per frame (adjust for desired speed)
+
+    useAnimationFrame((_, delta) => {
+        if (containerRef.current) {
+            x.current -= speed * (delta / 16.67); // normalize to 60fps
+            if (x.current < -containerRef.current.scrollWidth / 2) {
+                x.current = 0;
+            }
+            containerRef.current.style.transform = `translateX(${x.current}px)`;
+        }
+    });
+
     return (
         <div className="bg-gradient-to-r from-black via-[#1a1a1a] to-black bg-fixed text-white px-4 sm:px-10 py-4 w-full">
             <div className="max-w-8xl mx-auto overflow-hidden whitespace-nowrap">
-                <motion.div
-                    className="flex text-sm sm:text-base md:text-2xl font-medium uppercase"
-                    animate={{ x: ["0%", "-100%"] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 40,
-                        ease: "linear",
-                    }}
-                >
+                <div ref={containerRef} className="flex text-sm sm:text-base md:text-2xl font-medium uppercase">
                     <div className="flex gap-6 sm:gap-10 py-2">
                         {content.map((item, index) => (
                             <div key={index} className="flex items-center gap-2 min-w-fit">
@@ -80,7 +84,16 @@ export default function SkillsSlider() {
                             </div>
                         ))}
                     </div>
-                </motion.div>
+                    {/* Duplicate for seamless scroll */}
+                    <div className="flex gap-6 sm:gap-10 py-2">
+                        {content.map((item, index) => (
+                            <div key={`repeat-${index}`} className="flex items-center gap-2 min-w-fit">
+                                {skillIcons[item]}
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

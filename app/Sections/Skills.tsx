@@ -61,7 +61,7 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             Skills &amp; <span className="text-[#7f45ee]">Expertise</span>{" "}
           </h2>
-          <p className="text-gray-300 max-w-xl mx-auto text-lg">
+          <p className="max-w-xl mx-auto text-lg  text-[#E6E5E5]/80">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
         </div>
