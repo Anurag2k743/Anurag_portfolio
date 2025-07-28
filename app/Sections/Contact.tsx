@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 
 export default function Contact() {
@@ -13,15 +12,7 @@ export default function Contact() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log("Form submitted:", formData)
-    setFormData({ name: "", email: "", phone: "", message: ""  })
-    setIsSubmitting(false)
-  }
+  const [statusMessage, setStatusMessage] = useState<null | { type: "success" | "error"; message: string }>(null)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,55 +23,87 @@ export default function Contact() {
     })
   }
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setStatusMessage({ type: "success", message: "Message sent successfully!" })
+        setFormData({ name: "", email: "", phone: "", message: "" })
+      } else {
+        setStatusMessage({ type: "error", message: "Failed to send message. Please try again." })
+      }
+    } catch (error) {
+      console.error("Form error:", error)
+      setStatusMessage({ type: "error", message: "An error occurred. Please try again later." })
+    }
+
+    setIsSubmitting(false)
+
+    setTimeout(() => {
+      setStatusMessage(null)
+    }, 5000)
+  }
+
   return (
-    <section id="contact" className="py-10 md:py-20 scroll-mt-20 ">
+    <section id="contact" className="py-10 md:py-20 scroll-mt-20">
       <div className="container">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ">Get  <span className="text-[#7f45ee] font-bold">In Touch</span></h2>
-          <p className=" text-[#E6E5E5]/80 max-w-2xl mx-auto text-lg">
-            I&apos;m always open to discussing new opportunities and interesting projects
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Get <span className="text-[#7f45ee] font-bold">In Touch</span>
+          </h2>
+          <p className="text-[#E6E5E5]/80 max-w-2xl mx-auto text-lg">
+            I'm always open to discussing new opportunities and interesting projects
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
+          {/* LEFT PANEL */}
           <div>
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Let&apos;s Connect</h3>
-            <p className=" text-[#E6E5E5]/80 mb-8 text-lg">
-              Feel free to reach out if you&apos;re looking for a developer, have a question, or just want to connect.
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Let's Connect</h3>
+            <p className="text-[#E6E5E5]/80 mb-8 text-lg">
+              Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
             </p>
 
             <div className="space-y-4">
-              {/* Email */}
               <a
                 href="mailto:anuragvashisht743@gmail.com"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
                 <Mail className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
-                <span className=" text-[#E6E5E5]/80 group-hover:text-purple-500 transition-colors duration-300">
+                <span className="text-[#E6E5E5]/80 group-hover:text-purple-500 transition-colors duration-300">
                   anuragvashisht743@gmail.com
                 </span>
               </a>
 
-              {/* Phone */}
               <a
                 href="tel:+917876212773"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
                 <Phone className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
-                <span className=" text-[#E6E5E5]/80 group-hover:text-[#7f45ee] transition-colors duration-300">
+                <span className="text-[#E6E5E5]/80 group-hover:text-[#7f45ee] transition-colors duration-300">
                   +91 7876212773
                 </span>
               </a>
 
-              {/* Location */}
               <a
                 href="https://maps.app.goo.gl/Mae2RG9jjGoM8U7V9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer">
+                className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
+              >
                 <MapPin className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-[#7f45ee]" />
-                <span className=" text-[#E6E5E5]/80 group-hover:text-[#7f45ee] transition-colors duration-300">
-                  Dharmshal Himachal Pradesh, India
+                <span className="text-[#E6E5E5]/80 group-hover:text-[#7f45ee] transition-colors duration-300">
+                  Dharamshala, Himachal Pradesh, India
                 </span>
               </a>
             </div>
@@ -100,7 +123,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-white/10  rounded-lg"
+                  className="w-full px-4 py-3 border border-white/10 rounded-lg"
                   placeholder="Your Name"
                 />
               </div>
@@ -116,23 +139,23 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-white/10 rounded-lg "
+                  className="w-full px-4 py-3 border border-white/10 rounded-lg"
                   placeholder="your.email@example.com"
                 />
               </div>
 
-                <div className="group">
+              <div className="group">
                 <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                   Number
                 </label>
                 <input
-                  type="phone"
+                  type="tel"
                   id="phone"
-                  name="number"
+                  name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-white/10 rounded-lg "
+                  className="w-full px-4 py-3 border border-white/10 rounded-lg"
                   placeholder="your contact number"
                 />
               </div>
@@ -170,6 +193,18 @@ export default function Contact() {
                   </>
                 )}
               </button>
+
+              {statusMessage && (
+                <div
+                  className={`text-center text-sm font-medium mt-4 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    statusMessage.type === "success"
+                      ? "bg-green-500/10 text-green-400 border border-green-500/30"
+                      : "bg-red-500/10 text-red-400 border border-red-500/30"
+                  }`}
+                >
+                  {statusMessage.message}
+                </div>
+              )}
             </form>
           </div>
         </div>
