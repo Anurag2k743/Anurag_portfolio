@@ -10,7 +10,7 @@ export default function FooterSection() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Projects", href: "#project" },
+    { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ]
 
@@ -31,7 +31,7 @@ export default function FooterSection() {
   const socialLinks = [
     {
       icon: <Github className="h-6 w-6" />,
-      href: "https://github.com/anuragvashisht",
+      href: "https://github.com/Anurag2k743",
       label: "GitHub",
     },
     {
@@ -57,7 +57,8 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16 md:mb-16">
           <div>
             <h3 className="text-xl font-bold mb-2">Anurag Vashisht</h3>
-            <p className="text-sm text-gray-300 mb-4">
+            <p className="text-sm text-gray-300 mb-4 pr-10
+            ">
               Frontend Developer passionate about creating amazing web experiences
             </p>
           </div>

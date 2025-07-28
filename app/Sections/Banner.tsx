@@ -66,7 +66,7 @@ export function Banner() {
 
           <div className="mt-6 sm:mt-8 flex justify-center items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/Anurag2k743"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
@@ -75,7 +75,7 @@ export function Banner() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/anurag-vashisht-39981836b"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
@@ -84,7 +84,7 @@ export function Banner() {
             </a>
 
             <a
-              href="anurag:vashishtanurag743@example.com"
+              href="anurag:vashishtanurag743@gmail.com"
               className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
             >
               <Mail size={20} />
