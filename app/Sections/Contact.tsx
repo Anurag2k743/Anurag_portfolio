@@ -21,7 +21,7 @@ export default function Contact() {
 
     if (name === "phone") {
       const numericValue = value.replace(/\D/g, "")
-      setFormData({ ...formData, [name]: numericValue.slice(0, 10) })
+      setFormData({ ...formData, [name]: numericValue })
     } else {
       setFormData({ ...formData, [name]: value })
     }
@@ -32,6 +32,11 @@ export default function Contact() {
 
     if (formData.phone.length !== 10) {
       setStatusMessage({ type: "error", message: "Phone number must be exactly 10 digits." })
+      return
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      setStatusMessage({ type: "error", message: "Please enter a valid email address." })
       return
     }
 
@@ -63,6 +68,9 @@ export default function Contact() {
       setStatusMessage(null)
     }, 5000)
   }
+
+  const isFormValid =
+    formData.name && formData.email && formData.message && formData.phone.length === 10
 
   return (
     <section id="contact" className="py-10 md:py-20 scroll-mt-20">
@@ -158,22 +166,18 @@ export default function Contact() {
                 <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                   Number
                 </label>
-                <div className="flex items-center gap-2">
-                  <span className=" text-white px-3 py-3 rounded-l-lg border border-white/10">+91</span>
-                  <input
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    inputMode="numeric"
-                    pattern="\d*"
-                    maxLength={10}
-                    required
-                    className="w-full px-4 py-3 border border-white/10 rounded-r-lg"
-                    placeholder="Enter you number"
-                  />
-                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  pattern="[0-9]*"
+                  maxLength={10}
+                  required
+                  className="w-full px-4 py-3 border border-white/10 rounded-lg"
+                  placeholder="Enter your 10-digit number"
+                />
               </div>
 
               <div className="group">
@@ -194,7 +198,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !isFormValid}
                 className="w-full bg-[#7f45ee] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
