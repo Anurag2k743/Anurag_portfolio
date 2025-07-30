@@ -63,7 +63,10 @@ export default function Contact() {
         setStatusMessage({ type: "success", message: "Message sent successfully!" })
         setFormData({ name: "", email: "", phone: "", message: "" })
       } else {
-        setStatusMessage({ type: "error", message: data.error || "Failed to send message. Try again." })
+        setStatusMessage({
+          type: "error",
+          message: typeof data.error === "string" ? data.error : JSON.stringify(data.error)
+        })
       }
     } catch (error) {
       console.error("Form error:", error)
@@ -224,7 +227,9 @@ export default function Contact() {
                       : "bg-red-500/10 text-red-400 border border-red-500/30"
                   }`}
                 >
-                  {statusMessage.message}
+                  {typeof statusMessage.message === "string"
+                    ? statusMessage.message
+                    : JSON.stringify(statusMessage.message)}
                 </div>
               )}
             </form>
