@@ -102,12 +102,12 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href="mailto:anuragvashisht743@gmail.com"
+                href="mailto:vashishtanurag743@gmail.com"
                 className="flex items-center space-x-4 group rounded-lg transition-all duration-300 hover-lift cursor-pointer"
               >
                 <Mail className="w-9 h-9 group-hover:scale-110 transition-transform duration-300 rounded p-2 bg-white/10 text-purple-500 hover:text-purple-600" />
                 <span className="text-[#E6E5E5]/80 group-hover:text-purple-500 transition-colors duration-300">
-                  anuragvashisht743@gmail.com
+                 vashishtanurag743@gmail.com
                 </span>
               </a>
 
