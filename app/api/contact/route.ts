@@ -1,42 +1,37 @@
-import { Resend } from "resend";
-import { NextResponse } from "next/server";
+// app/api/contact/route.ts
+
+import { NextResponse } from "next/server"
+import nodemailer from "nodemailer"
 
 export async function POST(req: Request) {
+  const { name, email, phone, message } = await req.json()
+
   try {
-    const { name, email, phone, message } = await req.json();
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    })
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { success: false, error: "Missing required fields." },
-        { status: 400 }
-      );
-    }
-
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
-    const data = await resend.emails.send({
-      from: 'Your Name <onboarding@resend.dev>', // Replace with your verified domain
-      to: ['your@email.com'], // Replace with actual recipient
+    const mailOptions = {
+      from: email,
+      to: process.env.EMAIL_USER,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>Contact Details</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong><br/> ${message}</p>
       `,
-    });
-
-    return NextResponse.json({ success: true, data });
-  } catch (error: unknown) {
-    console.error("Resend error:", error);
-
-    let errorMessage = "Internal server error";
-
-    if (error instanceof Error) {
-      errorMessage = error.message;
     }
 
-    return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
+    await transporter.sendMail(mailOptions)
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error("Error sending email:", error)
+    return NextResponse.json({ success: false, error }, { status: 500 })
   }
 }

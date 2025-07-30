@@ -11,6 +11,7 @@ export default function Contact() {
     message: "",
   })
 
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [statusMessage, setStatusMessage] = useState<null | { type: "success" | "error"; message: string }>(null)
 
@@ -21,7 +22,7 @@ export default function Contact() {
 
     if (name === "phone") {
       const numericValue = value.replace(/\D/g, "")
-      setFormData({ ...formData, [name]: numericValue })
+      setFormData({ ...formData, [name]: numericValue.slice(0, 10) })
     } else {
       setFormData({ ...formData, [name]: value })
     }
@@ -29,18 +30,25 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    const errors: { [key: string]: string } = {}
 
-    if (formData.phone.length !== 10) {
-      setStatusMessage({ type: "error", message: "Phone number must be exactly 10 digits." })
+    if (!formData.name.trim()) errors.name = "Name is required"
+    if (!formData.email.trim()) errors.email = "Email is required"
+    if (!formData.phone.trim()) {
+      errors.phone = "Phone number is required"
+    } else if (formData.phone.length !== 10) {
+      errors.phone = "Phone number must be exactly 10 digits"
+    }
+    if (!formData.message.trim()) errors.message = "Message is required"
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors)
       return
     }
 
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      setStatusMessage({ type: "error", message: "Please enter a valid email address." })
-      return
-    }
-
+    setFormErrors({})
     setIsSubmitting(true)
+    setStatusMessage(null)
 
     try {
       const response = await fetch("/api/contact", {
@@ -55,11 +63,11 @@ export default function Contact() {
         setStatusMessage({ type: "success", message: "Message sent successfully!" })
         setFormData({ name: "", email: "", phone: "", message: "" })
       } else {
-        setStatusMessage({ type: "error", message: "Failed to send message. Please try again." })
+        setStatusMessage({ type: "error", message: data.error || "Failed to send message. Try again." })
       }
     } catch (error) {
       console.error("Form error:", error)
-      setStatusMessage({ type: "error", message: "An error occurred. Please try again later." })
+      setStatusMessage({ type: "error", message: "An unexpected error occurred." })
     }
 
     setIsSubmitting(false)
@@ -68,9 +76,6 @@ export default function Contact() {
       setStatusMessage(null)
     }, 5000)
   }
-
-  const isFormValid =
-    formData.name && formData.email && formData.message && formData.phone.length === 10
 
   return (
     <section id="contact" className="py-10 md:py-20 scroll-mt-20">
@@ -130,80 +135,76 @@ export default function Contact() {
           {/* RIGHT PANEL */}
           <div className="bg-gradient-to-br from-[#111215] to-[#1a1a1a] p-8 rounded-lg hover-lift transition-all duration-500">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name */}
               <div className="group">
-                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                  Name
-                </label>
+                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
                   className="w-full px-4 py-3 border border-white/10 rounded-lg"
                   placeholder="Your Name"
                 />
+                {formErrors.name && <p className="text-red-400 text-sm mt-1">{formErrors.name}</p>}
               </div>
 
+              {/* Email */}
               <div className="group">
-                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                  Email
-                </label>
+                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                   className="w-full px-4 py-3 border border-white/10 rounded-lg"
                   placeholder="your.email@example.com"
                 />
+                {formErrors.email && <p className="text-red-400 text-sm mt-1">{formErrors.email}</p>}
               </div>
 
+              {/* Phone */}
               <div className="group">
-                <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
-                  Number
-                </label>
+                <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">Phone</label>
                 <input
-                  type="tel"
+                  type="text"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  pattern="[0-9]*"
+                  inputMode="numeric"
                   maxLength={10}
-                  required
                   className="w-full px-4 py-3 border border-white/10 rounded-lg"
-                  placeholder="Enter your 10-digit number"
+                  placeholder="Enter your 10-digit phone number"
                 />
+                {formErrors.phone && <p className="text-red-400 text-sm mt-1">{formErrors.phone}</p>}
               </div>
 
+              {/* Message */}
               <div className="group">
-                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                  Message
-                </label>
+                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={5}
                   className="w-full px-4 py-3 border border-white/10 rounded-lg resize-none"
                   placeholder="Your message..."
                 />
+                {formErrors.message && <p className="text-red-400 text-sm mt-1">{formErrors.message}</p>}
               </div>
 
+              {/* Submit */}
               <button
                 type="submit"
-                disabled={isSubmitting || !isFormValid}
-                className="w-full bg-[#7f45ee] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#7f45ee] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 button-glow hover-lift group"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white font-semibold"></div>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
                     Sending...
                   </>
                 ) : (
@@ -214,6 +215,7 @@ export default function Contact() {
                 )}
               </button>
 
+              {/* Global Status Message */}
               {statusMessage && (
                 <div
                   className={`text-center text-sm font-medium mt-4 px-4 py-2 rounded-lg transition-all duration-300 ${
