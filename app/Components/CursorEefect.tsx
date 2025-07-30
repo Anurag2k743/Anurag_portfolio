@@ -45,7 +45,7 @@ export default function CursorEffect() {
 
       {/* Outer Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-1 rounded-full border border-purple-400 pointer-events-none z-[9997] shadow-[0_0_20px_4px_rgba(168,85,247,0.4)]"
+        className="fixed top-0 left-0 w-12 h-12 rounded-full border border-purple-400 pointer-events-none z-[9997] shadow-[0_0_20px_4px_rgba(168,85,247,0.4)]"
         animate={{
           x: cursorPos.x - 24,
           y: cursorPos.y - 24,
