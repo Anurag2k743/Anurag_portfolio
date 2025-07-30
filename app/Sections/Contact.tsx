@@ -199,7 +199,7 @@ export default function Contact() {
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white font-semibold"></div>
                     Sending...
                   </>
                 ) : (

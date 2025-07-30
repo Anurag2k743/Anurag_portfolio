@@ -44,7 +44,7 @@ export default function AboutUsSection() {
 
           <div className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 flex-col gap-4 z-20">
             <button className="rounded-full border-white text-white hover:bg-white hover:text-black bg-transparent p-2">
-              <Whatsapp className="h-6 w-6" />
+             <a href="tel:+917876212773"><Whatsapp className="h-6 w-6" /></a> 
             </button>
             <button className="rounded-full border-white text-white hover:bg-white hover:text-black bg-transparent p-2">
               <Send className="h-6 w-6" />

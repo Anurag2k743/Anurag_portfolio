@@ -1,7 +1,7 @@
 "use client";
-import { ArrowRightIcon, Github, Linkedin, Mail } from "lucide-react";
+import {Github, Linkedin, Mail } from "lucide-react";
 import Particles from "../Components/Particles";
-
+import Image from "next/image";
 export function Banner() {
   return (
     <div
@@ -52,14 +52,14 @@ export function Banner() {
                 Download Resume
               </a>
               <span className="ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#6D28D9]">
-                <ArrowRightIcon className="h-4 w-4" />
+                <Image src="/arrow.png" height={17} width={17} alt="rightarrow" />
               </span>
             </button>
 
             <button className="relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#6D28D9] font-semibold text-md pl-5 pr-3 text-white shadow-lg transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 focus:ring-offset-gray-900">
               <a href="#contact">Contact Me</a>
               <span className="ml-2 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#6D28D9]">
-                <ArrowRightIcon className="h-4 w-4" />
+                <Image src="/arrow.png" height={17} width={17} alt="rightarrow" />
               </span>
             </button>
           </div>
@@ -84,7 +84,7 @@ export function Banner() {
             </a>
 
             <a
-              href="anurag:vashishtanurag743@gmail.com"
+              href="mailto:anuragvashisht743@gmail.com"
               className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] text-[#7f45ee] rounded-xl shadow-md hover:shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
             >
               <Mail size={20} />

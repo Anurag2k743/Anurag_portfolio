@@ -1,23 +1,15 @@
-// app/api/contact/route.ts
-
+import { Resend } from "resend"
 import { NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   const { name, email, phone, message } = await req.json()
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
-
-    const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_USER,
+    const data = await resend.emails.send({
+      from: 'Your Name <onboarding@resend.dev>', // or your verified domain
+      to: ['your@email.com'], // Replace with your email
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>Contact Details</h2>
@@ -26,12 +18,11 @@ export async function POST(req: Request) {
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Message:</strong><br/> ${message}</p>
       `,
-    }
+    })
 
-    await transporter.sendMail(mailOptions)
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, data })
   } catch (error) {
-    console.error("Error sending email:", error)
-    return NextResponse.json({ success: false, error }, { status: 500 })
+    console.error("Resend error:", error)
+    return NextResponse.json({ success: false }, { status: 500 })
   }
 }
