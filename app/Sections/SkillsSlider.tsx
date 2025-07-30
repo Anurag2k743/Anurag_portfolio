@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useAnimationFrame } from "framer-motion";
+import { useAnimationFrame } from "framer-motion";
 import {
     FaReact,
     FaGithub,

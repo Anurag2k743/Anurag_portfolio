@@ -5,7 +5,6 @@ import { Github, Linkedin, Twitter, Instagram } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function FooterSection() {
-  const [email, setEmail] = useState("")
 
   const navLinks = [
     { name: "Home", href: "#home" },

@@ -1,21 +1,22 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-// Type safety and error handling improved
 export async function POST(req: Request) {
   try {
     const { name, email, phone, message } = await req.json();
 
-    // Basic input validation (optional but good for spam & safety)
     if (!name || !email || !message) {
-      return NextResponse.json({ success: false, error: "Missing required fields." }, { status: 400 });
+      return NextResponse.json(
+        { success: false, error: "Missing required fields." },
+        { status: 400 }
+      );
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const data = await resend.emails.send({
       from: 'Your Name <onboarding@resend.dev>', // Replace with your verified domain
-      to: ['your@email.com'], // Change to your real destination
+      to: ['your@email.com'], // Replace with actual recipient
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>Contact Details</h2>
@@ -27,8 +28,15 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true, data });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Resend error:", error);
-    return NextResponse.json({ success: false, error: error?.message || "Internal server error" }, { status: 500 });
+
+    let errorMessage = "Internal server error";
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+
+    return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
   }
 }
