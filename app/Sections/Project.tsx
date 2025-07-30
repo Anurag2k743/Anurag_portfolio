@@ -36,7 +36,7 @@ const projects = [
     description:
       "A CodeXMatrixx website clone built using Next.js, highlighting its purpose and design approach.",
     image: "/codex.png",
-    technologies: ["React", "Tailwind CSS"],
+    technologies: ["Next js", "Tailwind CSS"],
     liveUrl: "https://code-xmattri-x.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/codeXmattriX",
   },
@@ -63,7 +63,7 @@ const projects = [
     description:
       "A CodeXMatrixx website clone built using Next.js, highlighting its purpose and design approach.",
     image: "/codex.png",
-    technologies: ["React", "Tailwind CSS"],
+    technologies: ["Next js", "Tailwind CSS"],
     liveUrl: "https://code-xmattri-x.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/codeXmattriX",
   },
