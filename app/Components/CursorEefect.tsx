@@ -108,7 +108,7 @@ export default function CursorEffect() {
 
       {cursorStyle === "neon" && (
         <motion.div
-          className="fixed top-0 left-0 w-16 h-16 rounded-full pointer-events-none z-[9997] border border-purple-400 shadow-[0_0_20px_6px_rgba(168,85,247,0.5)] [will-change:transform,opacity]"
+          className="fixed top-0 left-0 w-13 h-13 rounded-full pointer-events-none z-[9997] border border-purple-400 shadow-[0_0_20px_6px_rgba(168,85,247,0.5)] [will-change:transform,opacity]"
           animate={{
             x: cursorPos.x - 32,
             y: cursorPos.y - 32,
