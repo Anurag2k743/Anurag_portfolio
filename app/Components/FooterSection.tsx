@@ -45,7 +45,7 @@ export default function FooterSection() {
     },
     {
       icon: <Instagram className="h-6 w-6" />,
-      href: "https://instagram.com/anuragvashisht",
+      href: "https://instagram.com",
       label: "Instagram",
     },
   ]
