@@ -52,7 +52,7 @@ export function Header() {
   return (
     <header className="fixed top-8 left-0 right-0 z-50 w-full ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between border-t-1 border-[#7f45ee]  rounded-full px-6 py-3   bg-[#1a1a1a]/90 shadow-lg backdrop-blur-sm transition-all duration-300">
+        <div className="flex items-center justify-between border-t-1 border-white/80  rounded-full px-6 py-3   bg-[#1a1a1a]/90 shadow-lg backdrop-blur-sm transition-all duration-300">
           <Link href="#home">
             <div className="text-xl font-bold text-white cursor-pointer hover:text-[#7f45ee] transition-colors duration-300">
               Portfolio
