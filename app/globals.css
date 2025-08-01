@@ -19,19 +19,11 @@ html, body {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Outfit-Bold';
-  src: url('/webfonts/Outfit-Bold.woff') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-} 
 
-p,span,button,li ,a{
-  font-family: 'Outfit-Regular';
-}
 
-h1,h2,h3{
+body{
   font-family: 'Outfit-Regular';
+  
 }
 .particles-container {
   position: relative;

@@ -31,6 +31,14 @@ const projects = [
     liveUrl: "https://vision-kappa-ten.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/Vision",
   },
+   {
+  title: "Weather App",
+  description: "A sleek weather app showing live data and 7-day forecasts using Next.js and Tailwind CSS.",
+  image: "/weatherapp.png",
+  technologies: ["Next.js", "Tailwind CSS"],
+  liveUrl: "https://weatherapp-tau-fawn.vercel.app/",
+  githubUrl: "https://github.com/Anurag2k743/weatherapp",
+},
   {
     title: "CodeXmattix Clone",
     description:
@@ -39,36 +47,7 @@ const projects = [
     technologies: ["Next js", "Tailwind CSS"],
     liveUrl: "https://code-xmattri-x.vercel.app/",
     githubUrl: "https://github.com/Anurag2k743/codeXmattriX",
-  },
-  {
-    title: "Netflix Clone",
-    description:
-      "A responsive Netflix-inspired web application built with React and Tailwind CSS, featuring a modern UI and smooth user interactions.",
-    image: "/netflix.png",
-    technologies: ["React", "Tailwind CSS"],
-    liveUrl: "https://netflix-pied-delta-80.vercel.app",
-    githubUrl: "https://github.com/Anurag2k743/Netflix",
-  },
-  {
-    title: "Vision UI",
-    description:
-      "A sleek and elegant user interface design system built with React and Tailwind CSS, tailored for dashboards and admin panels.",
-    image: "/vision.png",
-    technologies: ["React", "Tailwind CSS"],
-    liveUrl: "https://vision-kappa-ten.vercel.app/",
-    githubUrl: "https://github.com/Anurag2k743/Vision",
-  },
-  {
-    title: "CodeXmattix Clone",
-    description:
-      "A CodeXMatrixx website clone built using Next.js, highlighting its purpose and design approach.",
-    image: "/codex.png",
-    technologies: ["Next js", "Tailwind CSS"],
-    liveUrl: "https://code-xmattri-x.vercel.app/",
-    githubUrl: "https://github.com/Anurag2k743/codeXmattriX",
-  },
- 
-
+  }
 ]
 
 export default function Projects() {
