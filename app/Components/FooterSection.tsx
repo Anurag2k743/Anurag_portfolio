@@ -22,7 +22,7 @@ export default function FooterSection() {
   ]
 
   const contactInfo = {
-    location: "Dharmshal Himachal Pradesh, India",
+    location: "Dharshala Himachal Pradesh, India",
     phone: "+91 7876212773",
     email: "vashishtanurag743@gmail.com",
   }
